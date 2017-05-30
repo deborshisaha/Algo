@@ -24,23 +24,23 @@ public class KMPSubstringSearch {
         // Pre compute array
         int[] processedArray = precomputedArray();
         
-        int i=0, j=0;
+        int i=0, p=0;
         
-        for (; i< this.targetString.length() && j < this.pattern.length(); ) {
+        for (; i< this.targetString.length() && p < this.pattern.length(); ) {
             
-            if (this.targetString.charAt(i) == this.pattern.charAt(j)) {
+            if (this.targetString.charAt(i) == this.pattern.charAt(p)) {
                 i++;
-                j++;
+                p++;
             } else {
-                if (j!=0) {
-                    j = processedArray[j-1];
+                if (p!=0) {
+                    p = processedArray[p-1];
                 } else {
                     i++;
                 }
             }
         }
         
-        if (j == this.pattern.length()) {
+        if (p == this.pattern.length()) {
             return true;
         }
         

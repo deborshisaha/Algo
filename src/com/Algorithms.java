@@ -1,5 +1,6 @@
 package com;
 
+import com.algorithm.string.AbbreviationChecker;
 import com.algorithms.arrays.ThreeSum;
 import com.algorithms.string.*;
 import java.util.List;
@@ -15,7 +16,7 @@ public class Algorithms {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("Hello");
+
         ThreeSum threeSum = new ThreeSum();
         int[] array = new int[]{-1,0,2,1,1,4,3};
         List<List<Integer>> result = threeSum.getListOfListOfIntegers(5, array);
@@ -33,6 +34,8 @@ public class Algorithms {
         
         SmallestWindowContaingAllCharacters.driver();
         KMPSubstringSearch.driver();
+        AbbreviationChecker.driver();
+        LongestPalindromeSubstring.driver();
     }
     
 }

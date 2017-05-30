@@ -45,12 +45,18 @@ public class AbbreviationChecker {
                     j++;
                 }
 
-                i = +(number + 1);
+                i += number;
             } else {
                 return false;
             }
         }
 
         return true;
+    }
+    
+    static public void driver() {
+        AbbreviationChecker abbreviationChecker = new AbbreviationChecker();
+        System.out.println(abbreviationChecker.isValidWordAbbreviation("word", "1ord")?"true":"false");
+        System.out.println(abbreviationChecker.isValidWordAbbreviation("internationalization", "i12iz4n")?"true":"false");
     }
 }
