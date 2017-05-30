@@ -36,6 +36,7 @@ public class Algorithms {
         KMPSubstringSearch.driver();
         AbbreviationChecker.driver();
         LongestPalindromeSubstring.driver();
+        LongestSubstringWithKDistinctCharacters.driver();
     }
     
 }
