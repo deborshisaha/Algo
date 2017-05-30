@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.algorithms.string;
 
 /**
@@ -10,5 +5,10 @@ package com.algorithms.string;
  * @author dsaha
  */
 public class KMPSubstringSearch {
-    
+        
+    static public void driver() {
+        String str = "abcxabcdabcdabcy";
+        String subString = "abcdabcy";
+        System.out.println("Hello");
+    }
 }

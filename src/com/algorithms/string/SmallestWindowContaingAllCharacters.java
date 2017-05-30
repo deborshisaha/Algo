@@ -44,6 +44,11 @@ public class SmallestWindowContaingAllCharacters {
         return this.result.length();
     }
     
+    static public void driver() {
+        SmallestWindowContaingAllCharacters swcac = new SmallestWindowContaingAllCharacters("ABCDEDABC","DDAC");
+        System.out.println(swcac.getSubstring());
+    }
+ 
     private String computeSubstring() {
         
         String res = "";
@@ -51,7 +56,7 @@ public class SmallestWindowContaingAllCharacters {
         int minLength = Integer.MAX_VALUE;
     
         // target hash map 
-        Map<Character, Integer> targetHashMap = new HashMap<Character, Integer>();
+        Map<Character, Integer> targetHashMap = new HashMap<>();
         
         int targetIterator = 0;
 
@@ -69,7 +74,7 @@ public class SmallestWindowContaingAllCharacters {
             targetIterator++;
         }
         
-        Map<Character, Integer> substringHashMap = new HashMap<Character, Integer>();
+        Map<Character, Integer> substringHashMap = new HashMap<>();
         
         int left = 0;
         
