@@ -46,7 +46,7 @@ public class SmallestWindowContaingAllCharacters {
     
     private String computeSubstring() {
         
-        String res = null;
+        String res = "";
         int count = 0;
         int minLength = Integer.MAX_VALUE;
     
@@ -57,7 +57,7 @@ public class SmallestWindowContaingAllCharacters {
 
         // Create target hash map
         while(targetIterator < this.target.length()) { 
-            targetIterator++;
+            
             char c = this.target.charAt(targetIterator);
             
             if (targetHashMap.containsKey(c)) { 
@@ -65,18 +65,23 @@ public class SmallestWindowContaingAllCharacters {
             } else {
                 targetHashMap.put(c, 1);
             }
+            
+            targetIterator++;
         }
         
         Map<Character, Integer> substringHashMap = new HashMap<Character, Integer>();
         
+        int left = 0;
+        
         for (int i=0; i < this.source.length(); i++) {
             
-            Character sc = this.source.charAt(i);
+            char sc = this.source.charAt(i);
             
             if (targetHashMap.containsKey(sc)) {
+                
                 if (substringHashMap.containsKey(sc)) {
+                    
                     // update the map count, do not update the count
-                     
                     if (substringHashMap.get(sc) < targetHashMap.get(sc)) {
                         count++;
                     }
@@ -86,25 +91,25 @@ public class SmallestWindowContaingAllCharacters {
                     substringHashMap.put(sc, 1); 
                     count++;
                 }
-            } else {
-                continue;
             }
             
-            int left = 0;
             if (count == this.target.length()) {
                 
-                Character lc = this.source.charAt(left);
+                char lc = this.source.charAt(left);
+                
                 while (!substringHashMap.containsKey(lc) || substringHashMap.get(lc) > targetHashMap.get(lc)) {
+                    
                     if (substringHashMap.containsKey(lc)) {
                         substringHashMap.put(lc, substringHashMap.get(lc)-1);
                     }
                     
                     left++;
+                    lc = this.source.charAt(left);
                 }
                 
                 if (i-left < minLength) {
-                    minLength = i-left;
-                    res = this.source.substring(left, i);
+                    minLength = i-left+1;
+                    res = this.source.substring(left, i+1);
                 }
             }
         }
