@@ -1,6 +1,7 @@
 package com;
 
 import com.algorithm.string.AbbreviationChecker;
+import com.algorithms.arrays.BestTimeToBuyAndSellAStock;
 import com.algorithms.arrays.ThreeSum;
 import com.algorithms.string.*;
 import java.util.List;
@@ -37,7 +38,16 @@ public class Algorithms {
         AbbreviationChecker.driver();
         LongestPalindromeSubstring.driver();
         LongestSubstringWithKDistinctCharacters.driver();
+        
+        System.out.println("+----------------------------------+");
+        System.out.println("| Palindrome Pair                  |");
+        System.out.println("+----------------------------------+");
         PalindromePair.driver();
+        
+        System.out.println("+----------------------------------+");
+        System.out.println("| BestTimeToBuyAndSellAStock       |");
+        System.out.println("+----------------------------------+");
+        BestTimeToBuyAndSellAStock.driver();
     }
     
 }
