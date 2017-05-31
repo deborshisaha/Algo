@@ -37,6 +37,7 @@ public class Algorithms {
         AbbreviationChecker.driver();
         LongestPalindromeSubstring.driver();
         LongestSubstringWithKDistinctCharacters.driver();
+        PalindromePair.driver();
     }
     
 }
