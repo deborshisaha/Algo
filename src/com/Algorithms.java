@@ -2,6 +2,7 @@ package com;
 
 import com.algorithm.string.AbbreviationChecker;
 import com.algorithms.arrays.BestTimeToBuyAndSellAStock;
+import com.algorithms.arrays.SelfCrossing;
 import com.algorithms.arrays.ThreeSum;
 import com.algorithms.string.*;
 import java.util.List;
@@ -48,6 +49,8 @@ public class Algorithms {
         System.out.println("| BestTimeToBuyAndSellAStock       |");
         System.out.println("+----------------------------------+");
         BestTimeToBuyAndSellAStock.driver();
+        
+        SelfCrossing.driver();
     }
     
 }
