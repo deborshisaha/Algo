@@ -22,23 +22,48 @@ public class MergeIntervals {
         
         Collections.sort(intervals, new IntervalComparator());
         
-        Interval ongoingInterval = new Interval(0,0);
+        Interval entryInterval = intervals.get(0);
         
-        for (int i = 0; i<intervals.size()-1; i++) {
-            Interval currentInterval = intervals.get(i);
-            Interval nextInterval = intervals.get(i+1);
+        for (int i = 1; i<intervals.size(); i++) {
+
+            Interval interval = intervals.get(i);
             
-            if (currentInterval.getEndTime() > nextInterval.getStartTime()) {
+            if (entryInterval.getEndTime() > interval.getStartTime()) {
                 // Overlap detected
-                ongoingInterval.startTime = (currentInterval.getStartTime() > ongoingInterval.getStartTime())?currentInterval.getStartTime():ongoingInterval.getStartTime();
-                ongoingInterval.endTime = Math.max(currentInterval.getStartTime(), nextInterval.getEndTime());
+                Integer startTime = Math.min(entryInterval.getStartTime(), interval.getStartTime());//(currentInterval.getStartTime() > ongoingInterval.getStartTime())?currentInterval.getStartTime():ongoingInterval.getStartTime();
+                Integer endTime = Math.max(entryInterval.getEndTime(), interval.getEndTime());
+                entryInterval.startTime = startTime;
+                entryInterval.endTime = endTime;
             } else {
-                // No overlap, add
-                
+                mergedIntervals.add(entryInterval);
+                entryInterval = interval;
             }
-            
         }
+        
+        mergedIntervals.add(entryInterval);
+        
         return mergedIntervals;
+    }
+    
+    static public void driver() {
+        
+        Interval i1 = new Interval(1,3);
+        Interval i2 = new Interval(2,6);
+        Interval i3 = new Interval(8,10);
+        Interval i4 = new Interval(15,18);
+
+        List<Interval> intervals = new ArrayList();
+        intervals.add(i1);
+        intervals.add(i2);
+        intervals.add(i3);
+        intervals.add(i4);
+        MergeIntervals sc = new MergeIntervals();
+        
+        List<Interval> mI = sc.mergedIntervals(intervals);
+        System.out.println("Intervals are:");
+        mI.forEach((i) -> {
+            System.out.println(i.startTime+","+i.endTime);
+        });
     }
 }
 
@@ -58,18 +83,17 @@ class Interval {
         this.startTime = startTime;
         this.endTime = endTime;
     }
- 
+
 }
 
 class IntervalComparator implements Comparator<Interval> {
     
     @Override
     public int compare (Interval interval1, Interval interval2) {
-        if ( interval1.getStartTime() > interval2.getEndTime()) {
+        if ( interval1.getEndTime() > interval2.getEndTime()) {
             return 1;
         } else {
             return -1;
         }
     }
-    
 }

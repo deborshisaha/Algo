@@ -33,6 +33,7 @@ public class BestTimeToBuyAndSellAStock {
         
         return maxProfit;
     }
+    
     static public void driver() {
         BestTimeToBuyAndSellAStock bestTimeToBuyAndSellAStock = new BestTimeToBuyAndSellAStock();
         

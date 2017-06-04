@@ -1,9 +1,6 @@
 package com;
 
-import com.algorithm.string.AbbreviationChecker;
-import com.algorithms.arrays.BestTimeToBuyAndSellAStock;
-import com.algorithms.arrays.SelfCrossing;
-import com.algorithms.arrays.ThreeSum;
+import com.algorithms.arrays.*;
 import com.algorithms.string.*;
 import java.util.List;
 
@@ -58,6 +55,11 @@ public class Algorithms {
         System.out.println("| SelfCrossing                                            |");
         System.out.println("+---------------------------------------------------------+");
         SelfCrossing.driver();
+        
+        System.out.println("\n+---------------------------------------------------------+");
+        System.out.println("| Merge Intervals                                            |");
+        System.out.println("+---------------------------------------------------------+");
+        MergeIntervals.driver();
     }
     
 }

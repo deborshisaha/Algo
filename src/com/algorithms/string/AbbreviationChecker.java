@@ -1,4 +1,4 @@
-package com.algorithm.string;
+package com.algorithms.string;
 
 /*
 Leet Code 408
