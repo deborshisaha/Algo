@@ -38,18 +38,25 @@ public class Algorithms {
         KMPSubstringSearch.driver();
         AbbreviationChecker.driver();
         LongestPalindromeSubstring.driver();
+        
+        System.out.println("\n+---------------------------------------------------------+");
+        System.out.println("| LongestSubstringWithKDistinctCharacters                 |");
+        System.out.println("+---------------------------------------------------------+");
         LongestSubstringWithKDistinctCharacters.driver();
         
-        System.out.println("+----------------------------------+");
-        System.out.println("| Palindrome Pair                  |");
-        System.out.println("+----------------------------------+");
+        System.out.println("\n+---------------------------------------------------------+");
+        System.out.println("| Palindrome Pair                                         |");
+        System.out.println("+---------------------------------------------------------+");
         PalindromePair.driver();
         
-        System.out.println("+----------------------------------+");
-        System.out.println("| BestTimeToBuyAndSellAStock       |");
-        System.out.println("+----------------------------------+");
+        System.out.println("\n+---------------------------------------------------------+");
+        System.out.println("| BestTimeToBuyAndSellAStock                              |");
+        System.out.println("+---------------------------------------------------------+");
         BestTimeToBuyAndSellAStock.driver();
         
+        System.out.println("\n+---------------------------------------------------------+");
+        System.out.println("| SelfCrossing                                            |");
+        System.out.println("+---------------------------------------------------------+");
         SelfCrossing.driver();
     }
     
