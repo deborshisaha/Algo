@@ -25,6 +25,16 @@ public class SelfCrossing {
         // detect when it takes in ward spiral
         if (i==x.length) {return false;}
         
+       /*      2
+        *   +-----+
+        *   |     |  1
+        *   +     +
+        * 3 |
+        *   +     +
+        *   |     |  1
+        *   +-----+
+        *      2
+        */
         if ((i >= 4 && x[i] + x[i - 4] >= x[i - 2]) || 
             (i == 3 && x[i] == x[i - 2])) {
             x[i - 1] -= x[i - 3];

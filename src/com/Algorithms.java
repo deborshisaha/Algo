@@ -1,9 +1,6 @@
 package com;
 
-import com.algorithm.string.AbbreviationChecker;
-import com.algorithms.arrays.BestTimeToBuyAndSellAStock;
-import com.algorithms.arrays.SelfCrossing;
-import com.algorithms.arrays.ThreeSum;
+import com.algorithms.arrays.*;
 import com.algorithms.string.*;
 import java.util.List;
 
@@ -38,19 +35,31 @@ public class Algorithms {
         KMPSubstringSearch.driver();
         AbbreviationChecker.driver();
         LongestPalindromeSubstring.driver();
+        
+        System.out.println("\n+---------------------------------------------------------+");
+        System.out.println("| LongestSubstringWithKDistinctCharacters                 |");
+        System.out.println("+---------------------------------------------------------+");
         LongestSubstringWithKDistinctCharacters.driver();
         
-        System.out.println("+----------------------------------+");
-        System.out.println("| Palindrome Pair                  |");
-        System.out.println("+----------------------------------+");
+        System.out.println("\n+---------------------------------------------------------+");
+        System.out.println("| Palindrome Pair                                         |");
+        System.out.println("+---------------------------------------------------------+");
         PalindromePair.driver();
         
-        System.out.println("+----------------------------------+");
-        System.out.println("| BestTimeToBuyAndSellAStock       |");
-        System.out.println("+----------------------------------+");
+        System.out.println("\n+---------------------------------------------------------+");
+        System.out.println("| BestTimeToBuyAndSellAStock                              |");
+        System.out.println("+---------------------------------------------------------+");
         BestTimeToBuyAndSellAStock.driver();
         
+        System.out.println("\n+---------------------------------------------------------+");
+        System.out.println("| SelfCrossing                                            |");
+        System.out.println("+---------------------------------------------------------+");
         SelfCrossing.driver();
+        
+        System.out.println("\n+---------------------------------------------------------+");
+        System.out.println("| Median Of Two Sorted Arrays                             |");
+        System.out.println("+---------------------------------------------------------+");
+        MedianOfTwoSortedArrays.driver();
     }
     
 }
