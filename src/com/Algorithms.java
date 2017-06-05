@@ -57,9 +57,9 @@ public class Algorithms {
         SelfCrossing.driver();
         
         System.out.println("\n+---------------------------------------------------------+");
-        System.out.println("| Merge Intervals                                            |");
+        System.out.println("| Median Of Two Sorted Arrays                             |");
         System.out.println("+---------------------------------------------------------+");
-        MergeIntervals.driver();
+        MedianOfTwoSortedArrays.driver();
     }
     
 }
