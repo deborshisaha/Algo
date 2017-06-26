@@ -1,6 +1,8 @@
 package com;
 
 import com.algorithms.arrays.*;
+import com.algorithms.linkedlist.DeleteDuplicatesInALinkedList;
+import com.algorithms.linkedlist.DeleteNAfterMNodes;
 import com.algorithms.string.*;
 import java.util.List;
 
@@ -60,6 +62,17 @@ public class Algorithms {
         System.out.println("| Median Of Two Sorted Arrays                             |");
         System.out.println("+---------------------------------------------------------+");
         MedianOfTwoSortedArrays.driver();
+        
+        TotalScore.driver();
+        System.out.println("\n+---------------------------------------------------------+");
+        System.out.println("| Delete Duplicates in a linked list                      |");
+        System.out.println("+---------------------------------------------------------+");
+        DeleteDuplicatesInALinkedList.driver();
+        
+        System.out.println("\n+---------------------------------------------------------+");
+        System.out.println("| Delete M nodes after N nodes                            |");
+        System.out.println("+---------------------------------------------------------+");
+        DeleteNAfterMNodes.driver();
     }
     
 }
