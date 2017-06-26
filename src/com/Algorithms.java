@@ -3,6 +3,7 @@ package com;
 import com.algorithms.arrays.*;
 import com.algorithms.linkedlist.DeleteDuplicatesInALinkedList;
 import com.algorithms.linkedlist.DeleteNAfterMNodes;
+import com.algorithms.linkedlist.ReverseAlternateKNodes;
 import com.algorithms.string.*;
 import java.util.List;
 
@@ -73,6 +74,11 @@ public class Algorithms {
         System.out.println("| Delete M nodes after N nodes                            |");
         System.out.println("+---------------------------------------------------------+");
         DeleteNAfterMNodes.driver();
+        
+        System.out.println("\n+---------------------------------------------------------+");
+        System.out.println("| Reverse k Nodes                                         |");
+        System.out.println("+---------------------------------------------------------+");
+        ReverseAlternateKNodes.driver();
     }
     
 }

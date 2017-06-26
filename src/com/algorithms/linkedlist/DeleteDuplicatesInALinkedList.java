@@ -9,15 +9,15 @@ import java.util.HashSet;
  */
 public class DeleteDuplicatesInALinkedList {
 
-    private Node linkedList = null;
+    private LinkedList linkedList = null;
 
-    public DeleteDuplicatesInALinkedList(Node linkedList) {
+    public DeleteDuplicatesInALinkedList(LinkedList linkedList) {
         this.linkedList = linkedList;
     }
 
     public void deleteDuplicate() {
         HashSet<Integer> set = new HashSet<Integer>();
-        Node iteratorNode = this.linkedList;
+        Node iteratorNode = this.linkedList.head();
         Node previousNode = null;
         while (iteratorNode != null) {
 
@@ -55,20 +55,12 @@ public class DeleteDuplicatesInALinkedList {
         ll.add(node2);
         ll.add(node3);
         
-        DeleteDuplicatesInALinkedList driverObject = new DeleteDuplicatesInALinkedList(node1);
+        DeleteDuplicatesInALinkedList driverObject = new DeleteDuplicatesInALinkedList(ll);
         System.out.println("Before");
-        driverObject.print(node1);
+        ll.print();
         driverObject.deleteDuplicate();
         System.out.println("\n\nAfter");
-        driverObject.print(node1);
+        ll.print();
     }
-    
-    public void print(Node node) {
-        Node currentNode = node;
-        
-        while (currentNode!=null) {
-            System.out.print(currentNode.data+",");
-            currentNode = currentNode.next;
-        }
-    }
+
 }

@@ -60,7 +60,7 @@ public class DeleteNAfterMNodes {
         
         DeleteNAfterMNodes driverObject = new DeleteNAfterMNodes(node1);
         System.out.println("Before");
-        driverObject.print(ll.head());
+        ll.print();
         
         try {
             driverObject.delete(1, 2);
@@ -68,22 +68,7 @@ public class DeleteNAfterMNodes {
             System.out.println(e.description());
         }
         System.out.println("After");
-        driverObject.print(node1);
+        ll.print();
     }
-    
-    public void print(Node node) {
-        Node currentNode = node;
-        
-        while (currentNode!=null) {
-            System.out.print(currentNode.data+",");
-            currentNode = currentNode.next;
-        }
-    }
-}
 
-class NotEnoughNodesException extends Exception {
-
-    String description() {
-        return "Not enough nodes";
-    }
 }

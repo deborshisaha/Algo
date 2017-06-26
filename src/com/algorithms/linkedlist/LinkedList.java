@@ -6,7 +6,8 @@ public class LinkedList {
 
     private Node lastNode = null;
     private Node firstNode = null;
-
+    private int count = 0;
+    
     // Add
     public boolean add(Node node) {
 
@@ -20,7 +21,7 @@ public class LinkedList {
             lastNode.next = node;
             lastNode = node;
         }
-
+        count++;
         return true;
     }
 
@@ -39,6 +40,7 @@ public class LinkedList {
             currentNode = currentNode.next;
         }
 
+        count--;
         prevNode.next = null;
         lastNode = prevNode;
         
@@ -52,6 +54,10 @@ public class LinkedList {
         
     }
     
+    public void deleteNode(int startIndex, int endIndex) {
+        
+    }
+    
     // First Node
     public Node head() {
         return firstNode;
@@ -60,5 +66,29 @@ public class LinkedList {
     // Tail Node
     public Node tail() {
         return lastNode;
+    }
+    
+    public int size() {
+        return count;
+    }
+    
+    public void print() {
+        Node currentNode = firstNode;
+        while (currentNode!=null) {
+            
+            System.out.print(currentNode.data);
+            if (currentNode.next != null) {
+                System.out.print("->");
+            }
+            
+            currentNode = currentNode.next;
+        }
+    }
+}
+
+class NotEnoughNodesException extends Exception {
+
+    String description() {
+        return "Not enough nodes";
     }
 }
