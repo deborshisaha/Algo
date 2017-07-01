@@ -1,6 +1,8 @@
 package com;
 
 import com.algorithms.arrays.*;
+import com.algorithms.dp.KnapSack01Calculator;
+import com.algorithms.dp.WeightedJobScheduler;
 import com.algorithms.linkedlist.DeleteDuplicatesInALinkedList;
 import com.algorithms.linkedlist.DeleteNAfterMNodes;
 import com.algorithms.linkedlist.ReverseAlternateKNodes;
@@ -79,6 +81,10 @@ public class Algorithms {
         System.out.println("| Reverse k Nodes                                         |");
         System.out.println("+---------------------------------------------------------+");
         ReverseAlternateKNodes.driver();
+        
+        KnapSack01Calculator.driver();
+        
+        WeightedJobScheduler.driver();
     }
     
 }
