@@ -2,6 +2,8 @@ package com;
 
 import com.algorithms.arrays.*;
 import com.algorithms.dp.KnapSack01Calculator;
+import com.algorithms.dp.StairCaseFibonacci;
+import com.algorithms.dp.SubsetSum;
 import com.algorithms.dp.WeightedJobScheduler;
 import com.algorithms.linkedlist.DeleteDuplicatesInALinkedList;
 import com.algorithms.linkedlist.DeleteNAfterMNodes;
@@ -85,6 +87,9 @@ public class Algorithms {
         KnapSack01Calculator.driver();
         
         WeightedJobScheduler.driver();
+        
+        StairCaseFibonacci.driver();
+        SubsetSum.driver();
     }
     
 }
