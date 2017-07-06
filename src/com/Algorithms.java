@@ -2,13 +2,22 @@ package com;
 
 import com.algorithms.arrays.*;
 import com.algorithms.dp.KnapSack01Calculator;
+import com.algorithms.dp.MinimumCostPath;
 import com.algorithms.dp.StairCaseFibonacci;
 import com.algorithms.dp.SubsetSum;
 import com.algorithms.dp.WeightedJobScheduler;
+import com.algorithms.graph.BridgeFinder;
+import com.algorithms.graph.CyclicUndirectedGraphCycleDetector;
+import com.algorithms.graph.DisjointSet;
+import com.algorithms.graph.TopologicalSort;
 import com.algorithms.linkedlist.DeleteDuplicatesInALinkedList;
 import com.algorithms.linkedlist.DeleteNAfterMNodes;
 import com.algorithms.linkedlist.ReverseAlternateKNodes;
 import com.algorithms.string.*;
+import com.algorithms.trees.BinarySearchTreeValidator;
+import com.algorithms.trees.BinaryTree;
+import com.algorithms.trees.HuffmanEncoding;
+import com.algorithms.trees.LeafStripper;
 import java.util.List;
 
 /**
@@ -90,6 +99,21 @@ public class Algorithms {
         
         StairCaseFibonacci.driver();
         SubsetSum.driver();
+        MinimumCostPath.driver();
+        
+        TopologicalSort.driver();
+        DisjointSet.driver();
+        CyclicUndirectedGraphCycleDetector.driver();
+        
+        BridgeFinder.driver();
+        
+        BinarySearchTreeValidator.driver();
+        
+        System.out.println("Diameter: "+ BinaryTree.createNotBST().diameter());
+        
+        LeafStripper.driver();
+        
+        HuffmanEncoding.driver();
     }
     
 }
