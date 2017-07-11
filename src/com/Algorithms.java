@@ -13,6 +13,7 @@ import com.algorithms.graph.TopologicalSort;
 import com.algorithms.linkedlist.DeleteDuplicatesInALinkedList;
 import com.algorithms.linkedlist.DeleteNAfterMNodes;
 import com.algorithms.linkedlist.ReverseAlternateKNodes;
+import com.algorithms.randomization.Shuffler;
 import com.algorithms.string.*;
 import com.algorithms.trees.BinarySearchTreeValidator;
 import com.algorithms.trees.BinaryTree;
@@ -114,6 +115,8 @@ public class Algorithms {
         LeafStripper.driver();
         
         HuffmanEncoding.driver();
+        
+        Shuffler.driver();
     }
     
 }
