@@ -13,6 +13,7 @@ import com.algorithms.graph.TopologicalSort;
 import com.algorithms.linkedlist.DeleteDuplicatesInALinkedList;
 import com.algorithms.linkedlist.DeleteNAfterMNodes;
 import com.algorithms.linkedlist.ReverseAlternateKNodes;
+import com.algorithms.randomization.Rand7UsingRand5;
 import com.algorithms.randomization.Shuffler;
 import com.algorithms.string.*;
 import com.algorithms.trees.BinarySearchTreeValidator;
@@ -117,6 +118,8 @@ public class Algorithms {
         HuffmanEncoding.driver();
         
         Shuffler.driver();
+        
+        Rand7UsingRand5.driver();
     }
     
 }
