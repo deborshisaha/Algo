@@ -14,6 +14,7 @@ import com.algorithms.linkedlist.DeleteDuplicatesInALinkedList;
 import com.algorithms.linkedlist.DeleteNAfterMNodes;
 import com.algorithms.linkedlist.ReverseAlternateKNodes;
 import com.algorithms.randomization.Rand7UsingRand5;
+import com.algorithms.randomization.RandomCountrySelectionByPopulation;
 import com.algorithms.randomization.ReservoirSampler;
 import com.algorithms.randomization.Shuffler;
 import com.algorithms.string.*;
@@ -123,6 +124,8 @@ public class Algorithms {
         Rand7UsingRand5.driver();
         
         ReservoirSampler.driver();
+        
+        RandomCountrySelectionByPopulation.driver();
     }
     
 }
