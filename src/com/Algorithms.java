@@ -17,6 +17,7 @@ import com.algorithms.randomization.Rand7UsingRand5;
 import com.algorithms.randomization.RandomCountrySelectionByPopulation;
 import com.algorithms.randomization.ReservoirSampler;
 import com.algorithms.randomization.Shuffler;
+import com.algorithms.recursion.BracketChecker;
 import com.algorithms.string.*;
 import com.algorithms.trees.BinarySearchTreeValidator;
 import com.algorithms.trees.BinaryTree;
@@ -126,6 +127,8 @@ public class Algorithms {
         ReservoirSampler.driver();
         
         RandomCountrySelectionByPopulation.driver();
+        
+        BracketChecker.driver();
     }
     
 }
