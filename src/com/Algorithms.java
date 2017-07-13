@@ -18,6 +18,7 @@ import com.algorithms.randomization.RandomCountrySelectionByPopulation;
 import com.algorithms.randomization.ReservoirSampler;
 import com.algorithms.randomization.Shuffler;
 import com.algorithms.recursion.BracketChecker;
+import com.algorithms.recursion.SudokuSolver;
 import com.algorithms.string.*;
 import com.algorithms.trees.BinarySearchTreeValidator;
 import com.algorithms.trees.BinaryTree;
@@ -129,6 +130,8 @@ public class Algorithms {
         RandomCountrySelectionByPopulation.driver();
         
         BracketChecker.driver();
+        
+        SudokuSolver.driver();
     }
     
 }
