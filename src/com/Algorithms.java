@@ -18,6 +18,7 @@ import com.algorithms.randomization.RandomCountrySelectionByPopulation;
 import com.algorithms.randomization.ReservoirSampler;
 import com.algorithms.randomization.Shuffler;
 import com.algorithms.recursion.BracketChecker;
+import com.algorithms.recursion.NQueen;
 import com.algorithms.recursion.SudokuSolver;
 import com.algorithms.recursion.WordsPossibleUsingAPhoneNumber;
 import com.algorithms.string.*;
@@ -134,7 +135,9 @@ public class Algorithms {
         
         SudokuSolver.driver();
         
-        WordsPossibleUsingAPhoneNumber.driver();
+        //WordsPossibleUsingAPhoneNumber.driver();
+        
+        NQueen.driver();
     }
     
 }

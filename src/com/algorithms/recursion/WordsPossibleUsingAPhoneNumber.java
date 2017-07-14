@@ -8,6 +8,8 @@ public class WordsPossibleUsingAPhoneNumber {
     void permute(String string, char[] ph, int position) {
 
         if (position >= ph.length) {
+            // Check in a dictionary
+            // If a word, then put in a dictionary
             System.out.println(string);
             return;
         }
