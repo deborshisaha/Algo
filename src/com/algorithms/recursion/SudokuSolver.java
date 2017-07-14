@@ -4,6 +4,18 @@ import com.algorithms.SudokuBox;
 
 public class SudokuSolver {
 
+    /*
+    put
+    Assumptions that insertion checks if the value being inserted validates the sudoku
+    i.e. if the value being inserted is not valid, then roll back the value
+    
+    isEmpty
+    Sudoku class provides an API which return true if a box is empty
+    
+    get
+    Sudoku class would return the integer at index row,column
+    
+    */
     private SudokuBox sudokuBox = null;
 
     public SudokuSolver() {}
@@ -14,24 +26,34 @@ public class SudokuSolver {
 
     private boolean solveUtil(int row, int col) {
 
+        // If we ever reach this case, it means we are done processing the sudoku
+        // return true
         if (row == 9) {
             return true;
         }
         
+        // If this box is empty then try filling it out
+        // Otherwise goto next box
         if (this.sudokuBox.isEmpty(row, col)) {
-
+            // Try all different options to fill out the box 1-9
             for (int i = 1; i < 10; i++) {
 
+                // If putting 'i' makes the sudoku invalid then put returns falls
                 if (this.sudokuBox.put(i, row, col)) {
-                    //this.sudokuBox.print();
-                    // If row and col is at the end
+                    
+                    // if putting the value succeeded at 8,8 then we're done processing
                     if (row == 8 && col == 8) {
+                        // return true
                         return true;
                     }
-
+                    
+                    // Continue with the next row and column
                     if (!isNextValid(row, col)) {
+                        // With the current value of i, things didn't work out well
+                        // rollback or reset this box and try again with next value of i
                         this.sudokuBox.put(0, row, col);
                     } else {
+                        // With current value of i, things were good so return true at this point
                         return true;
                     }
                 }
@@ -39,6 +61,7 @@ public class SudokuSolver {
             // Exhausted all attempts. Not solvable 
             return false;
         } else {
+            // Go to next empty box
             return isNextValid(row, col);
         }
 
