@@ -94,7 +94,7 @@ public class SudokuSolver {
     }
 
     public static void driver() {
-        SudokuBox sudokuBox = new SudokuBox();
+        SudokuBox sudokuBox = new SudokuBox("/Users/dsaha/Desktop/sudoku.txt");
         SudokuSolver sudokuSolver = new SudokuSolver(sudokuBox);
         System.out.println("Before");
         sudokuSolver.sudokuBox.print();
