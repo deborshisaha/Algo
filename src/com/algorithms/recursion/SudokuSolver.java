@@ -6,8 +6,7 @@ public class SudokuSolver {
 
     private SudokuBox sudokuBox = null;
 
-    public SudokuSolver() {
-    }
+    public SudokuSolver() {}
 
     public SudokuSolver(SudokuBox sudoku) {
         this.sudokuBox = sudoku;

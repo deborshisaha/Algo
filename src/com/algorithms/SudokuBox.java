@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.algorithms;
 
 import java.nio.file.Files;
@@ -10,17 +5,14 @@ import java.nio.file.Paths;
 import java.util.HashSet;
 import java.util.stream.Stream;
 
-/**
- *
- * @author dsaha
- */
 public class SudokuBox {
         public SudokuBox() {
         
         this.boxes = new Box[]{new Box(),new Box(),new Box(),new Box(),new Box(),new Box(),new Box(),new Box(),new Box()};
         
         try {
-            Stream<String> stream = Files.lines(Paths.get("/Users/dsaha/Desktop/sudoku"));
+            
+            Stream<String> stream = Files.lines(Paths.get("/Users/dsaha/Desktop/sudoku.txt"));
 
             Iterable<String> iterable = stream::iterator;
 
@@ -219,7 +211,7 @@ public class SudokuBox {
         return true;
     }
 
-    public boolean isValid() {
+    private boolean isValid() {
         return verticallyValid() && horizontallyValid() && are3x3Valid();
     }
 
