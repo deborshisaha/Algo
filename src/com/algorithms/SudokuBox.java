@@ -6,13 +6,19 @@ import java.util.HashSet;
 import java.util.stream.Stream;
 
 public class SudokuBox {
-        public SudokuBox() {
+
+    private Box[] boxes = null;
+    
+    public SudokuBox() {
+    }
+
+    public SudokuBox(String filePath) {
         
-        this.boxes = new Box[]{new Box(),new Box(),new Box(),new Box(),new Box(),new Box(),new Box(),new Box(),new Box()};
-        
+        this.boxes = new Box[]{new Box(), new Box(), new Box(), new Box(), new Box(), new Box(), new Box(), new Box(), new Box()};
+
         try {
-            
-            Stream<String> stream = Files.lines(Paths.get("/Users/dsaha/Desktop/sudoku.txt"));
+
+            Stream<String> stream = Files.lines(Paths.get(filePath));
 
             Iterable<String> iterable = stream::iterator;
 
@@ -21,7 +27,7 @@ public class SudokuBox {
                 char[] array = s.toCharArray();
                 for (int r = 0; r < 9; r++) {
                     for (int c = 0; c < 9; c++) {
-                        int index = 9*r+c;
+                        int index = 9 * r + c;
                         if (array[index] == '.') {
                             put(0, r, c);
                         } else {
@@ -35,9 +41,6 @@ public class SudokuBox {
             e.printStackTrace();
         }
     }
-
-    //Box[] boxes = new Box[]{new Box(box0), new Box(box1), new Box(box2), new Box(box3), new Box(box4), new Box(box5), new Box(box6), new Box(box7), new Box(box8)};
-    Box[] boxes = null;
 
     public boolean isEmpty(int i, int j) {
         int number = get(i, j);
@@ -95,21 +98,21 @@ public class SudokuBox {
         Box b = getBox(r, c);
 
         if (b != null) {
-            
-            if (v==0) {
+
+            if (v == 0) {
                 b.put(0, effectiveRow, effectiveColumn);
                 // Do not check validity
                 return true;
             }
-            
+
             b.put(v, effectiveRow, effectiveColumn);
         }
-        
+
         if (!isValid()) {
             b.put(0, effectiveRow, effectiveColumn);
             return false;
         }
-        
+
         return true;
     }
 
@@ -225,7 +228,7 @@ public class SudokuBox {
         }
         System.out.println("+-----+-----+-----+");
     }
-    
+
 }
 
 class Box {
@@ -233,9 +236,9 @@ class Box {
     private int[][] mat = new int[9][9];
 
     public Box() {
-        this.mat = new int[][]{{0,0,0},{0,0,0},{0,0,0}};
+        this.mat = new int[][]{{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
     }
-    
+
     public boolean isValid() {
         HashSet<Integer> set = new HashSet<Integer>();
         for (int r = 0; r < 3; r++) {
@@ -263,4 +266,3 @@ class Box {
         mat[r][c] = v;
     }
 }
-
