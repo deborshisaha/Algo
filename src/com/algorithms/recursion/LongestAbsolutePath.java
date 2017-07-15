@@ -49,7 +49,7 @@ public class LongestAbsolutePath {
                 String data = dataStack.pop();
 
                 len -= data.length();
-                System.out.println(">> data:" + data + " len:" + len + " cl:" + currentLevel);
+                //System.out.println(">> data:" + data + " len:" + len + " cl:" + currentLevel);
             }
 
             // Once data was popped and we are at the right leve
@@ -67,7 +67,7 @@ public class LongestAbsolutePath {
             len += data.length();
             levelStack.push(level);
             dataStack.push(data);
-            System.out.println(" len:" + len + " maxLength:" + maxLength + " data:" + data + " datalength:" + data.length());
+            //System.out.println(" len:" + len + " maxLength:" + maxLength + " data:" + data + " datalength:" + data.length());
             maxLength = Integer.max(len, maxLength);
         }
 
