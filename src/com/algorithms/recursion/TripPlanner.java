@@ -11,6 +11,7 @@ public class TripPlanner {
     boolean[] used = null;
     
     public TripPlanner(String[][] tickets) {
+        
         for (int i = 0; i < tickets.length; i++) {
             String[] it = tickets[i];
             Trip t = new Trip(it[0], it[1]);
@@ -22,9 +23,7 @@ public class TripPlanner {
         for (int i = 0; i < tickets.length; i++) {
             used[i] = false;
         }
-                
-        // System.out.println("flight hops" + trips.size());
-         
+        
         Collections.sort(trips);
     }
 
@@ -79,12 +78,6 @@ public class TripPlanner {
         String[][] trips = new String[][]{{"ZUR","JFK"},{"MUC","LHR"},{"JFK","MUC"},{"SFO","SJC"},{"LHR","SFO"},{"JFK","ZUR"},{"SJC","JFK"}};
         TripPlanner tp = new TripPlanner(trips);
         tp.itinerary();
-        
-//        List<String> result = tp.itinerary();
-//        for (String s: result) {
-//            //System.out.print(s+" ");
-//        }
-//        System.out.println();
     }
 }
 
@@ -108,7 +101,6 @@ class Trip implements Comparable<Trip> {
             // Otherwise order by start
             int x = this.s.compareTo(other.s);
             // this - other > 0 then this comes later in the order
-            System.out.println(other.s+":"+this.s+":"+x);
             return x;
         }
 
