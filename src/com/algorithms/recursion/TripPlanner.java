@@ -8,7 +8,8 @@ public class TripPlanner {
 
     ArrayList<Trip> trips = new ArrayList();
     ArrayList<String> result = new ArrayList();
-
+    boolean[] used = null;
+    
     public TripPlanner(String[][] tickets) {
         for (int i = 0; i < tickets.length; i++) {
             String[] it = tickets[i];
@@ -16,52 +17,75 @@ public class TripPlanner {
             trips.add(t);
         }
         
-        System.out.println("flight hops" + trips.size());
+        used = new boolean[trips.size()];
         
-        for (Trip t : trips) {
-            System.out.println(t.s + "->" + t.d);
+        for (int i = 0; i < tickets.length; i++) {
+            used[i] = false;
         }
                 
+        // System.out.println("flight hops" + trips.size());
+         
         Collections.sort(trips);
     }
 
     public List<String> itinerary() {
 
+        if(x("JFK")) {
+            System.out.println("All processed");
+        }
 
-        x("JFK", trips.size());
-
+        for (String s: result) {
+            System.out.print(s+" ");
+        }
+               
         return result;
     }
 
-    private void x(String start, int count) {
+    private boolean x(String start) {
 
-        if (count == 0) {
-            return;
-        }
+        int i=0;
         
         // iterate through the list and pick the first starting point
         for (Trip t : trips) {
-            if (t.s.equals(start)) {
+            
+            if (used[i]) {
+                i++;
+                continue;
+            }
+            
+            if (t.s.equals(start) && used[i]== false) {
                 // push the trip in the result
                 result.add(t.s);
-                //trips.remove(t);
 
+                used[i] = true;
+                
                 // JFK...corresponding destination becomes starting point
-                x(t.d, count-1);
+                return x(t.d);
             }
+            
+            i++;
         }
+        
+        if (i == used.length) {
+            result.add(start);
+            return true;
+        }
+        
+        return false;
     }
     
     public static void driver() {
-        String[][] trips = new String[][]{{"DEL","JFK"},{"MUC","LHR"},{"JFK","MUC"},{"SFO","SJC"},{"LHR","SFO"},{"JFK","DEL"},{"SJC","JFK"}};
+        
+        String[][] trips = new String[][]{{"MUC","LHR"},{"JFK","MUC"},{"SFO","SJC"},{"LHR","SFO"}};
+        //{{"DEL","JFK"},{"MUC","LHR"},{"JFK","MUC"},{"SFO","SJC"},{"LHR","SFO"},{"JFK","DEL"},{"SJC","JFK"}};
         TripPlanner tp = new TripPlanner(trips);
         tp.itinerary();
         
-        List<String> result = tp.itinerary();
-        for (String s: result) {
-            //System.out.print(s+" ");
-        }
-        System.out.println();
+//        List<String> result = tp.itinerary();
+//        for (String s: result) {
+//            //System.out.print(s+" ");
+//        }
+//        System.out.println();
     }
 }
 
@@ -75,6 +99,7 @@ class Trip implements Comparable<Trip> {
         this.d = d;
     }
 
+    @Override
     public int compareTo(Trip other) {
 
         // If the start is same order by destination

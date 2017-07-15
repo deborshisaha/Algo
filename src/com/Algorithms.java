@@ -138,7 +138,7 @@ public class Algorithms {
         
         //WordsPossibleUsingAPhoneNumber.driver();
         
-        NQueen.driver();
+        //NQueen.driver();
         
         TripPlanner.driver();
     }
