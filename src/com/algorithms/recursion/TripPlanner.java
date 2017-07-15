@@ -76,8 +76,7 @@ public class TripPlanner {
     
     public static void driver() {
         
-        String[][] trips = new String[][]{{"MUC","LHR"},{"JFK","MUC"},{"SFO","SJC"},{"LHR","SFO"}};
-        //{{"DEL","JFK"},{"MUC","LHR"},{"JFK","MUC"},{"SFO","SJC"},{"LHR","SFO"},{"JFK","DEL"},{"SJC","JFK"}};
+        String[][] trips = new String[][]{{"ZUR","JFK"},{"MUC","LHR"},{"JFK","MUC"},{"SFO","SJC"},{"LHR","SFO"},{"JFK","ZUR"},{"SJC","JFK"}};
         TripPlanner tp = new TripPlanner(trips);
         tp.itinerary();
         
@@ -107,7 +106,10 @@ class Trip implements Comparable<Trip> {
             return this.d.compareTo(other.d);
         } else {
             // Otherwise order by start
-            return this.s.compareTo(other.s);
+            int x = this.s.compareTo(other.s);
+            // this - other > 0 then this comes later in the order
+            System.out.println(other.s+":"+this.s+":"+x);
+            return x;
         }
 
     }
