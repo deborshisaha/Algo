@@ -5,6 +5,7 @@ public class NQueen implements ValidityChecker {
     private ChessBoard board = null;
 
     public boolean solve(ChessBoard board1, int row, int col) {
+        
         this.board = board1;
 
         if (row == 8) {

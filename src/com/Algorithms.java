@@ -20,6 +20,7 @@ import com.algorithms.randomization.Shuffler;
 import com.algorithms.recursion.BracketChecker;
 import com.algorithms.recursion.NQueen;
 import com.algorithms.recursion.SudokuSolver;
+import com.algorithms.recursion.TripPlanner;
 import com.algorithms.recursion.WordsPossibleUsingAPhoneNumber;
 import com.algorithms.string.*;
 import com.algorithms.trees.BinarySearchTreeValidator;
@@ -138,6 +139,8 @@ public class Algorithms {
         //WordsPossibleUsingAPhoneNumber.driver();
         
         NQueen.driver();
+        
+        TripPlanner.driver();
     }
     
 }
