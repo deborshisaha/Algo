@@ -1,6 +1,7 @@
 package com;
 
 import com.algorithms.arrays.*;
+import com.algorithms.binarysearch.*;
 import com.algorithms.dp.KnapSack01Calculator;
 import com.algorithms.dp.MinimumCostPath;
 import com.algorithms.dp.StairCaseFibonacci;
@@ -153,6 +154,18 @@ public class Algorithms {
         AllCombinationsAtDistanceK.driver();
         
         ChainWordsToCircle.driver();
+        
+        ArithmeticProgressionSearch.driver();
+        
+        MissingNumberInConsecutiveNumbers.driver();
+        
+        PeakElementFinder.driver();
+        
+        BinarySearch.driver();
+        
+        FirstOccurrenceOfNumberInSortedArray.driver();
+        
+        MedianFinderIn2SortedArrays.driver();
     }
     
 }
