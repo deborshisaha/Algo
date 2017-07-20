@@ -28,6 +28,7 @@ import com.algorithms.recursion.SudokuSolver;
 import com.algorithms.recursion.TripPlanner;
 import com.algorithms.recursion.WordsPossibleUsingAPhoneNumber;
 import com.algorithms.string.*;
+import com.algorithms.suffixprefix.TST;
 import com.algorithms.trees.BinarySearchTreeValidator;
 import com.algorithms.trees.BinaryTree;
 import com.algorithms.trees.HuffmanEncoding;
@@ -166,6 +167,8 @@ public class Algorithms {
         FirstOccurrenceOfNumberInSortedArray.driver();
         
         MedianFinderIn2SortedArrays.driver();
+        
+        TST.driver();
     }
     
 }
