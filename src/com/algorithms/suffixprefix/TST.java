@@ -47,44 +47,53 @@ public class TST {
         char[] array = word.toCharArray();
 
         TSTNode node = getRoot();
+        //TSTNode nextNode = null;
 
-        if (node == null) {
-            node = new TSTNode(array[0]);
-            this.head = node;
-        }
-
-        TSTNode nextNode = node;
-        
         for (int i = 0; i < array.length;) {
 
-            if (nextNode == null) {
-                System.out.println("null");
-                nextNode = new TSTNode(array[i]);
-
-                if (node.ch <= array[i]) {
-                    System.out.println("null right");
-                    node.right = nextNode;
-                } else {
-                    System.out.println("null left");
-                    node.left = nextNode;
-                }
-            }
-
-            System.out.println(">>>"+array[i]);
-
-            if (node.ch == array[i]) {
-                System.out.println("1");
-                nextNode = node.middle;
+            char characterToBeInserted = array[i];
+            System.out.println("characterToBeInserted:" + characterToBeInserted);
+            if (node == null) {
+                System.out.println("root is null");
+                // can happen only when the root is null
+                node = new TSTNode(characterToBeInserted);
+                head = node;
                 i++;
-            } else if (node.ch <= array[i]) {
-                System.out.println("2");
-                nextNode = node.right;
-            } else if (node.ch > array[i]) {
-                System.out.println("3");
-                nextNode = node.left;
+                continue;
             }
 
-            node = nextNode;
+            // Get the node
+            if (characterToBeInserted < node.ch) {
+                System.out.println("less than:" + node.ch);
+                if (node.left == null) {
+                    System.out.println("insert to the left:" + node.ch);
+                    node.left = new TSTNode(characterToBeInserted);
+                    i++;
+                }
+
+                // go left
+                node = node.left;
+
+            } else if (characterToBeInserted == node.ch) {
+                if (node.middle == null) {
+                    System.out.println("insert in the middle:" + node.ch);
+                    node.middle = new TSTNode(characterToBeInserted);
+                    i++;
+                }
+
+                // go middle
+                node = node.middle;
+
+            } else if (characterToBeInserted > node.ch) {
+                if (node.right == null) {
+                    System.out.println("insert to the right:" + node.ch);
+                    node.right = new TSTNode(characterToBeInserted);
+                    i++;
+                }
+
+                // go right
+                node = node.right;
+            }
         }
 
         return true;
@@ -93,6 +102,7 @@ public class TST {
     // search
     public boolean isPresent(String searchString) {
 
+        System.out.println("Searching");
         if (searchString == null || searchString.length() == 0) {
             return false;
         }
@@ -103,29 +113,53 @@ public class TST {
         TSTNode node = getRoot();
 
         if (node == null) {
+            System.out.println("Root is null");
             return false;
         }
-        
-        int i = 0;
-        
-        for (; i < array.length;) {
 
-            if (node == null || i == array.length) {
+        int i = 0;
+
+        if (node.ch != array[0]) {
+            return false;
+        }
+
+        for (i = 1; i < array.length;) {
+
+            char currentCharacter = array[i - 1];
+            char nextCharacter = array[i];
+            System.out.println("nextCharacter:" + nextCharacter);
+
+            if (node == null) {
+                System.out.println("node is null");
                 break;
             }
 
-            if (node.ch == array[i]) {
-                // move straight
-                node = node.middle;
+            if (node.ch == currentCharacter) {
+                System.out.println("found: " + nextCharacter);
+                node = getNextNode(node,nextCharacter);
                 i++;
-            } else if (node.ch <= array[i]) {
-                node = node.right;
-            } else if (node.ch > array[i]) {
-                node = node.left;
+            } else if (node.ch < nextCharacter) {
+                System.out.println("move right:" + node.ch + " investigating: " + nextCharacter);
+                node = getNextNode(node,nextCharacter);
+            } else if (node.ch > nextCharacter) {
+                System.out.println("move left:" + node.ch + " investigating: " + nextCharacter);
+                node = getNextNode(node,nextCharacter);
             }
         }
 
         return i == array.length;
+    }
+
+    private TSTNode getNextNode(TSTNode node, char nextCharacter) {
+        if (node.ch == nextCharacter) {
+            return node.middle;
+        } else if (node.ch < nextCharacter) {
+            return node.right;
+        } else if (node.ch > nextCharacter) {
+            return node.left;
+        }
+        
+        return null;
     }
 
     // delete
@@ -167,11 +201,11 @@ public class TST {
 
         return false;
     }
-    
+
     public static void driver() {
         TST tst = new TST();
-        tst.insert("sea");
-        
-        System.out.println("TST "+tst.isPresent("sea"));
+        tst.insert("seet");
+
+        System.out.println("TST " + tst.isPresent("seet"));
     }
 }
