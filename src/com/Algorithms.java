@@ -29,6 +29,7 @@ import com.algorithms.recursion.TripPlanner;
 import com.algorithms.recursion.WordsPossibleUsingAPhoneNumber;
 import com.algorithms.string.*;
 import com.algorithms.suffixprefix.TST;
+import com.algorithms.suffixprefix.Trie;
 import com.algorithms.trees.BinarySearchTreeValidator;
 import com.algorithms.trees.BinaryTree;
 import com.algorithms.trees.HuffmanEncoding;
@@ -169,6 +170,8 @@ public class Algorithms {
         MedianFinderIn2SortedArrays.driver();
         
         TST.driver();
+        
+        Trie.driver();
     }
     
 }

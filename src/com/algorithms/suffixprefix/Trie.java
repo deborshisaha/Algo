@@ -4,6 +4,33 @@ import java.util.HashMap;
 
 public class Trie {
 
+    public boolean search(String target) {
+        
+        char[] arr = target.toCharArray();
+        
+        int i = 0;
+
+        TrieNode n = root;
+        
+        while(i != arr.length) {
+            
+            char ch = arr[i];
+            
+            TrieNode node = n.children.get(ch);
+            
+            if (node == null) {
+                return false;
+            } 
+            
+            n = node;
+            
+            i++;
+        }
+        
+        // when end of zero the node should be endOfWord
+        return (n!=null && n.endWord);
+    }
+
     private class TrieNode {
 
         boolean endWord;
@@ -15,7 +42,7 @@ public class Trie {
         }
     }
 
-    private TrieNode root = new TrieNode();
+    private final TrieNode root = new TrieNode();
 
     // insert
     public boolean insert(String word) {
@@ -60,6 +87,7 @@ public class Trie {
 
     // search
     public boolean isPresent(String searchString) {
+
         if (searchString == null || searchString.length() == 0) {
             return false;
         }
@@ -89,6 +117,42 @@ public class Trie {
 
     // delete
     public void delete(String word) {
+        deleteUtil(root, word.toCharArray(), 0);
+    }
+
+    private boolean deleteUtil (TrieNode node , char[] word, int position) {
+        
+        if (node == null) {
+            return true;
+        }
+        
+        if (position == (word.length-1) && node.endWord) {
+            // any other node from here?
+            if (!node.children.isEmpty()) {
+                node.endWord = false;
+                return false;
+            }
+            
+            return true;
+        }
+        
+        TrieNode childNode = node.children.get(word[position]);
+        if (deleteUtil(childNode, word,position+1)) {
+            node.children.put(word[position], null);
+            return true;
+        }
+        
+        return false;
+    }
+    
+    public static void driver() {
+        Trie trie = new Trie();
+
+        trie.insert("seat");
+        trie.insert("seede");
+
+        String targetString = "seed";
+        System.out.println(trie.search(targetString));
 
     }
 
