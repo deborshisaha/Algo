@@ -5,6 +5,8 @@
  */
 package com.algorithms.suffixprefix;
 
+import java.util.ArrayList;
+
 public class TST {
 
     private class TSTNode {
@@ -13,6 +15,8 @@ public class TST {
         TSTNode right;
         TSTNode middle;
         Character ch;
+        boolean endOfWord;
+        ArrayList<String> suggestions = new ArrayList<>();
 
         TSTNode() {
         }
@@ -37,10 +41,19 @@ public class TST {
     }
 
     // insert
-    public boolean insert(String word) {
+    public boolean insert(String word, String suggestion) {
 
         if (word == null || word.length() == 0) {
             return false;
+        }
+
+        // check if any key present
+        TSTNode n = this.getNodeToEndOfTheWord(word);
+
+        if (n != null) {
+            n.endOfWord = true;
+            n.suggestions.add(suggestion);
+            return true;
         }
 
         // convert it to array
@@ -52,9 +65,9 @@ public class TST {
         for (int i = 0; i < array.length;) {
 
             char characterToBeInserted = array[i];
-            System.out.println("characterToBeInserted:" + characterToBeInserted);
+
             if (node == null) {
-                System.out.println("root is null");
+
                 // can happen only when the root is null
                 node = new TSTNode(characterToBeInserted);
                 head = node;
@@ -64,9 +77,9 @@ public class TST {
 
             // Get the node
             if (characterToBeInserted < node.ch) {
-                System.out.println("less than:" + node.ch);
+
                 if (node.left == null) {
-                    System.out.println("insert to the left:" + node.ch);
+
                     node.left = new TSTNode(characterToBeInserted);
                     i++;
                 }
@@ -76,7 +89,7 @@ public class TST {
 
             } else if (characterToBeInserted == node.ch) {
                 if (node.middle == null) {
-                    System.out.println("insert in the middle:" + node.ch);
+
                     node.middle = new TSTNode(characterToBeInserted);
                     i++;
                 }
@@ -86,7 +99,7 @@ public class TST {
 
             } else if (characterToBeInserted > node.ch) {
                 if (node.right == null) {
-                    System.out.println("insert to the right:" + node.ch);
+
                     node.right = new TSTNode(characterToBeInserted);
                     i++;
                 }
@@ -96,15 +109,18 @@ public class TST {
             }
         }
 
+        node.endOfWord = true;
+        System.out.println("inserting " + suggestion + " for word " + word);
+        node.suggestions.add(suggestion);
+
         return true;
     }
 
     // search
-    public boolean isPresent(String searchString) {
+    private TSTNode getNodeToEndOfTheWord(String searchString) {
 
-        System.out.println("Searching");
         if (searchString == null || searchString.length() == 0) {
-            return false;
+            return null;
         }
 
         // convert it to array
@@ -113,41 +129,51 @@ public class TST {
         TSTNode node = getRoot();
 
         if (node == null) {
-            System.out.println("Root is null");
-            return false;
+            return null;
         }
 
         int i = 0;
 
         if (node.ch != array[0]) {
-            return false;
+            return null;
         }
 
         for (i = 1; i < array.length;) {
 
             char currentCharacter = array[i - 1];
             char nextCharacter = array[i];
-            System.out.println("nextCharacter:" + nextCharacter);
 
             if (node == null) {
-                System.out.println("node is null");
                 break;
             }
 
             if (node.ch == currentCharacter) {
-                System.out.println("found: " + nextCharacter);
-                node = getNextNode(node,nextCharacter);
                 i++;
-            } else if (node.ch < nextCharacter) {
-                System.out.println("move right:" + node.ch + " investigating: " + nextCharacter);
-                node = getNextNode(node,nextCharacter);
-            } else if (node.ch > nextCharacter) {
-                System.out.println("move left:" + node.ch + " investigating: " + nextCharacter);
-                node = getNextNode(node,nextCharacter);
+            }
+ 
+            TSTNode nextNode = getNextNode(node, nextCharacter);
+            
+            if (nextNode != null) {
+                node = nextNode;
+            } else {
+                break;
             }
         }
+        
+        return node;
+    }
 
-        return i == array.length;
+    public boolean isPresent(String word) {
+        TSTNode n = this.getNodeToEndOfTheWord(word);
+        return (n != null);
+    }
+
+    public ArrayList<String> getSuggestions(String word) {
+        TSTNode n = this.getNodeToEndOfTheWord(word);
+        if (n == null) {
+            return null;
+        }
+        return n.suggestions;
     }
 
     private TSTNode getNextNode(TSTNode node, char nextCharacter) {
@@ -158,7 +184,7 @@ public class TST {
         } else if (node.ch > nextCharacter) {
             return node.left;
         }
-        
+
         return null;
     }
 
@@ -194,7 +220,6 @@ public class TST {
         if (deleteUtil(nextNode, arr, index + 1)) {
             // If deleting the node below succeeded then delete this one
             if (node.right == null && node.middle == null && node.right == null) {
-                node = null;
                 return true;
             }
         }
@@ -204,8 +229,20 @@ public class TST {
 
     public static void driver() {
         TST tst = new TST();
-        tst.insert("seet");
 
-        System.out.println("TST " + tst.isPresent("seet"));
+        tst.insert("seat", "seating");
+        tst.insert("seat", "seated");
+        tst.insert("seed", "seeded");
+
+        String targetString = "seed";
+        ArrayList<String> suggestions = tst.getSuggestions(targetString);
+        if (suggestions != null && !suggestions.isEmpty()) {
+            suggestions.forEach((suggestion) -> {
+                System.out.println(suggestion);
+            });
+        } else {
+            System.out.println("No suggestions for '" + targetString + "'");
+        }
+
     }
 }
