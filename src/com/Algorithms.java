@@ -34,6 +34,7 @@ import com.algorithms.trees.BinarySearchTreeValidator;
 import com.algorithms.trees.BinaryTree;
 import com.algorithms.trees.HuffmanEncoding;
 import com.algorithms.trees.LeafStripper;
+import com.algorithms.trees.SegmentTree;
 import java.util.List;
 
 /**
@@ -172,6 +173,8 @@ public class Algorithms {
         TST.driver();
         
         Trie.driver();
+        
+        SegmentTree.driver();
     }
     
 }
