@@ -15,8 +15,11 @@ public class BTtoLinkedList {
         
         TreeNode startNode = convert(this.t.getRootNode()).getRight();
         TreeNode it = startNode;
-        while (it != null ) {
+        int i = 6;
+        while (i != 0 ) {
             System.out.print(it.data+" ");
+            it = it.getRight();
+            i--;
         }
         
         return null;
@@ -35,35 +38,22 @@ public class BTtoLinkedList {
         }
         
         TreeNode left = convert(n.getLeft());
+ 
         TreeNode right = convert(n.getRight());
         
-        n.setLeft(left);
-        n.setRight(right);
+        TreeNode tail = right.getLeft();
+
+        TreeNode start = left.getRight();
+
+        tail.setRight(start);
+      
+        start.setLeft(tail);
+       
+        left.setRight(n);
         
-        TreeNode tailOfFirstHalf = join(left, n);
-        TreeNode tailNode = join(tailOfFirstHalf, right);
-                
-        return tailNode;
-    }
-    
-    public TreeNode join(TreeNode tailOfFirstHalf, TreeNode frontOfSecondHalf) {
-        
-        TreeNode startNode = tailOfFirstHalf.getRight();
-        
-        // 1
-        tailOfFirstHalf.setRight(frontOfSecondHalf);
-        
-        if (frontOfSecondHalf.getLeft() == tailOfFirstHalf) {
-            startNode.setLeft(frontOfSecondHalf);
-            frontOfSecondHalf.setRight(startNode);
-        } else {
-            startNode.setLeft(frontOfSecondHalf.getLeft());
-            frontOfSecondHalf.setLeft(tailOfFirstHalf);
-            tailOfFirstHalf.setRight(frontOfSecondHalf);
-            frontOfSecondHalf.getLeft().setRight(startNode);
-        }
-        
-        return startNode.getLeft();
+        right.setLeft(n);
+
+        return tail;
     }
     
     public static void driver() {
