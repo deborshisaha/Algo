@@ -16,25 +16,25 @@ public class BinarySearchTree extends BinaryTree {
         TreeNode node = null;
 
         if (data <= this.root.data) {
-            node = this.root.left;
+            node = this.root.getLeft();
         } else {
-            node = this.root.right;
+            node = this.root.getRight();
         }
 
         while (node != null) {
             TreeNode nextNode = null;
             if (node.data > data) {
-                nextNode = node.left;
+                nextNode = node.getLeft();
                 if (nextNode == null) {
-                    node.left = new TreeNode(data);
+                    node.setLeft(new TreeNode(data));
                 }
-                node = node.left;
+                node = node.getLeft();
             } else {
-                nextNode = node.right;
+                nextNode = node.getRight();
                 if (nextNode == null) {
-                    node.right = new TreeNode(data);
+                    node.setRight(new TreeNode(data));
                 }
-                node = node.right;
+                node = node.getRight();
             }
         }
     }

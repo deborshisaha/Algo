@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class LeafStripper {
     
-    private BinaryTree bt;
+    private final BinaryTree bt;
 
     public LeafStripper(BinaryTree t) {
         this.bt = t;
@@ -13,7 +13,7 @@ public class LeafStripper {
     
     public ArrayList<TreeNode> strippedLeaves() {
         
-        ArrayList<TreeNode> result = new ArrayList<TreeNode>();
+        ArrayList<TreeNode> result = new ArrayList<>();
         
         strippedLeavesUtil(this.bt.getRootNode(),result);
         
@@ -24,22 +24,22 @@ public class LeafStripper {
         
         if (n==null) {return;}
         
-        if ( n.left == null && n.right == null) {
+        if ( n.getLeft() == null && n.getRight() == null) {
             result.add(n);
             return;
         }
         
-        strippedLeavesUtil(n.left, result);
-        strippedLeavesUtil(n.right, result);
+        strippedLeavesUtil(n.getLeft(), result);
+        strippedLeavesUtil(n.getRight(), result);
     }
     
     public static void driver() {
         LeafStripper ls = new LeafStripper(BinaryTree.createNotBST());
 
         System.out.println("Leaf Stripper");
-        for (TreeNode t: ls.strippedLeaves()) {
+        ls.strippedLeaves().forEach((t) -> {
             System.out.print(t.data+" ");
-        }
+        });
         System.out.println();
     }
 }

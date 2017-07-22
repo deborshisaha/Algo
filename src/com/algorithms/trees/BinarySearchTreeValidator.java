@@ -26,8 +26,8 @@ public class BinarySearchTreeValidator {
             return false;
         }
         
-        return (isBSTUtil(node.left, node.data-1, min) &&
-                isBSTUtil(node.right, max, node.data));
+        return (isBSTUtil(node.getLeft(), node.data-1, min) &&
+                isBSTUtil(node.getRight(), max, node.data));
     }
     
     public static void driver() {

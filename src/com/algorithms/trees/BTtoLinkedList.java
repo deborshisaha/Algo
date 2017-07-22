@@ -5,25 +5,79 @@ import com.algorithms.linkedlist.LinkedList;
 
 public class BTtoLinkedList {
 
+    private final BinaryTree t;
+    
     public BTtoLinkedList(BinaryTree t) {
-
+        this.t = t;
     }
 
     public LinkedList toCLL() {
-
+        
+        TreeNode startNode = convert(this.t.getRootNode()).getRight();
+        TreeNode it = startNode;
+        while (it != null ) {
+            System.out.print(it.data+" ");
+        }
+        
+        return null;
     }
-
+    
+    private TreeNode convert(TreeNode n) {
+        
+        // If this has passed the leaf node
+        if (n == null) {return null;}
+        
+        // This is the leaf node, point both pointers to self and pass it on
+        if (n.getLeft() == null && n.getRight()==null) {
+            n.setLeft(n);
+            n.setRight(n);
+            return n;
+        }
+        
+        TreeNode left = convert(n.getLeft());
+        TreeNode right = convert(n.getRight());
+        
+        n.setLeft(left);
+        n.setRight(right);
+        
+        TreeNode tailOfFirstHalf = join(left, n);
+        TreeNode tailNode = join(tailOfFirstHalf, right);
+                
+        return tailNode;
+    }
+    
+    public TreeNode join(TreeNode tailOfFirstHalf, TreeNode frontOfSecondHalf) {
+        
+        TreeNode startNode = tailOfFirstHalf.getRight();
+        
+        // 1
+        tailOfFirstHalf.setRight(frontOfSecondHalf);
+        
+        if (frontOfSecondHalf.getLeft() == tailOfFirstHalf) {
+            startNode.setLeft(frontOfSecondHalf);
+            frontOfSecondHalf.setRight(startNode);
+        } else {
+            startNode.setLeft(frontOfSecondHalf.getLeft());
+            frontOfSecondHalf.setLeft(tailOfFirstHalf);
+            tailOfFirstHalf.setRight(frontOfSecondHalf);
+            frontOfSecondHalf.getLeft().setRight(startNode);
+        }
+        
+        return startNode.getLeft();
+    }
+    
     public static void driver() {
         BinaryTree tree = new BinaryTree();
         tree.insert(1);
-        tree.getRootNode().left = new TreeNode(2);
-        tree.getRootNode().right = new TreeNode(3);
-        tree.getRootNode().left.left = new TreeNode(4);
-        tree.getRootNode().left.right = new TreeNode(5);
-
-        tree.getRootNode().right.left = new TreeNode(6);
-        tree.getRootNode().right.right = new TreeNode(7);
+        tree.getRootNode().setLeft( new TreeNode(2));
+        tree.getRootNode().setRight(new TreeNode(3));
+//        tree.getRootNode().getLeft().setLeft( new TreeNode(4));
+//        tree.getRootNode().getLeft().setRight( new TreeNode(5));
+//
+//        tree.getRootNode().getRight().setLeft(new TreeNode(6));
+//        tree.getRootNode().getRight().setRight(new TreeNode(7));
 
         BTtoLinkedList obj = new BTtoLinkedList(tree);
+        obj.toCLL();
     }
 }

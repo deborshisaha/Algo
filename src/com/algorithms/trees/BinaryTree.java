@@ -17,11 +17,11 @@ public class BinaryTree {
 
         TreeNode current = this.root;
 
-        while (current.left != null) {
-            current = current.left;
+        while (current.getLeft() != null) {
+            current = current.getLeft();
         }
 
-        current.left = n;
+        current.setLeft(n);
     }
 
     public static BinaryTree create() {
@@ -39,16 +39,16 @@ public class BinaryTree {
         bt.insert(10);
 
         TreeNode node = bt.getRootNode();
-        node.left = new TreeNode(12);
+        node.setLeft(new TreeNode(12));
 
-        node.right = new TreeNode(13);
-        node.right.right = new TreeNode(14);
-        node.right.right.right = new TreeNode(15);
-        node.right.right.right.right = new TreeNode(19);
+        node.setRight( new TreeNode(13));
+        node.getRight().setRight( new TreeNode(14));
+        node.getRight().getRight().setRight(new TreeNode(15));
+        node.getRight().getRight().getRight().setRight(new TreeNode(19));
 
-        node.right.left = new TreeNode(16);
-        node.right.left.left = new TreeNode(17);
-        node.right.left.left.left = new TreeNode(18);
+        node.getRight().setLeft(new TreeNode(16));
+        node.getRight().getLeft().setLeft( new TreeNode(17));
+        node.getRight().getLeft().getLeft().setLeft( new TreeNode(18));
 
         return bt;
     }
@@ -58,14 +58,14 @@ public class BinaryTree {
         bt.insert(10);
 
         TreeNode node = bt.getRootNode();
-        node.left = new TreeNode(12);
-        node.right = new TreeNode(13);
+        node.setLeft(new TreeNode(12));
+        node.setRight( new TreeNode(13));
         
-        node.right.right = new TreeNode(14);
-        node.right.left = new TreeNode(15);
+        node.getRight().setRight(new TreeNode(14));
+        node.getRight().setLeft(new TreeNode(15));
         
-        node.left.right = new TreeNode(14);
-        node.left.left = new TreeNode(11);
+        node.getLeft().setRight(new TreeNode(14));
+        node.getLeft().setLeft(new TreeNode(11));
 
         return bt;
     }
@@ -80,11 +80,11 @@ public class BinaryTree {
             return 0;
         }
 
-        int lHeight = heightUtil(t.left);
-        int rHeight = heightUtil(t.right);
+        int lHeight = heightUtil(t.getLeft());
+        int rHeight = heightUtil(t.getRight());
 
-        int lDiameter = diameterUtil(t.left);
-        int rDiameter = diameterUtil(t.right);
+        int lDiameter = diameterUtil(t.getLeft());
+        int rDiameter = diameterUtil(t.getRight());
 
         return Math.max(rHeight + 1 + lHeight, Math.max(lDiameter, rDiameter));
     }
@@ -101,10 +101,10 @@ public class BinaryTree {
     private boolean isBalancedUtil(TreeNode t) {
 
         if (t == null) { return true; }
-        int rheight = heightUtil(t.right);
-        int lheight = heightUtil(t.left);
+        int rheight = heightUtil(t.getRight());
+        int lheight = heightUtil(t.getLeft());
 
-        return (Math.abs(lheight - rheight) <= 1 && isBalancedUtil(t.left) && isBalancedUtil(t.right));
+        return (Math.abs(lheight - rheight) <= 1 && isBalancedUtil(t.getLeft()) && isBalancedUtil(t.getRight()));
     }
 
     private int heightUtil(TreeNode t) {
@@ -113,8 +113,8 @@ public class BinaryTree {
             return 0;
         }
 
-        int lHeight = heightUtil(t.left);
-        int rHeight = heightUtil(t.right);
+        int lHeight = heightUtil(t.getLeft());
+        int rHeight = heightUtil(t.getRight());
         int maxHeight = Integer.max(rHeight, lHeight);
         return maxHeight + 1;
     }
