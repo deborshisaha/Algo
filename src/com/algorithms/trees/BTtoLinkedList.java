@@ -86,8 +86,8 @@ public class BTtoLinkedList {
         tree.insert(1);
         tree.getRootNode().setLeft(new TreeNode(2));
         tree.getRootNode().setRight(new TreeNode(3));
-        tree.getRootNode().getLeft().setLeft(new TreeNode(4));
-        tree.getRootNode().getLeft().setRight(new TreeNode(5));
+        tree.getRootNode().getLeft().setLeft( new TreeNode(4));
+        tree.getRootNode().getLeft().setRight( new TreeNode(5));
 
         tree.getRootNode().getRight().setLeft(new TreeNode(6));
         tree.getRootNode().getRight().setRight(new TreeNode(7));

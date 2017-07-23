@@ -1,6 +1,8 @@
 package com.algorithms.trees;
 
 import com.algorithms.TreeNode;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class BinaryTree {
 
@@ -41,14 +43,14 @@ public class BinaryTree {
         TreeNode node = bt.getRootNode();
         node.setLeft(new TreeNode(12));
 
-        node.setRight( new TreeNode(13));
-        node.getRight().setRight( new TreeNode(14));
+        node.setRight(new TreeNode(13));
+        node.getRight().setRight(new TreeNode(14));
         node.getRight().getRight().setRight(new TreeNode(15));
         node.getRight().getRight().getRight().setRight(new TreeNode(19));
 
         node.getRight().setLeft(new TreeNode(16));
-        node.getRight().getLeft().setLeft( new TreeNode(17));
-        node.getRight().getLeft().getLeft().setLeft( new TreeNode(18));
+        node.getRight().getLeft().setLeft(new TreeNode(17));
+        node.getRight().getLeft().getLeft().setLeft(new TreeNode(18));
 
         return bt;
     }
@@ -59,11 +61,11 @@ public class BinaryTree {
 
         TreeNode node = bt.getRootNode();
         node.setLeft(new TreeNode(12));
-        node.setRight( new TreeNode(13));
-        
+        node.setRight(new TreeNode(13));
+
         node.getRight().setRight(new TreeNode(14));
         node.getRight().setLeft(new TreeNode(15));
-        
+
         node.getLeft().setRight(new TreeNode(14));
         node.getLeft().setLeft(new TreeNode(11));
 
@@ -100,11 +102,40 @@ public class BinaryTree {
 
     private boolean isBalancedUtil(TreeNode t) {
 
-        if (t == null) { return true; }
+        if (t == null) {
+            return true;
+        }
         int rheight = heightUtil(t.getRight());
         int lheight = heightUtil(t.getLeft());
 
         return (Math.abs(lheight - rheight) <= 1 && isBalancedUtil(t.getLeft()) && isBalancedUtil(t.getRight()));
+    }
+
+    public void printEachLevelInEachLine() {
+        Queue<TreeNode> oddQ = new LinkedList();
+        Queue<TreeNode> evenQ = new LinkedList();
+
+        int level = 0;
+
+        evenQ.add(this.root);
+
+        while (!oddQ.isEmpty() && !evenQ.isEmpty()) {
+
+            while (!evenQ.isEmpty()) {
+                TreeNode tn = evenQ.remove();
+                System.out.print(tn.data+" ");
+                oddQ.add(tn.getLeft());
+                oddQ.add(tn.getRight());
+            }
+            System.out.println();
+            while (!oddQ.isEmpty()) {
+                TreeNode tn = oddQ.remove();
+                System.out.print(tn.data+" ");
+                evenQ.add(tn.getLeft());
+                evenQ.add(tn.getRight());
+            }
+            System.out.println();
+        }
     }
 
     private int heightUtil(TreeNode t) {
