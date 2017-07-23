@@ -16,7 +16,7 @@ public class PrintNodeAtDistanceKFromANode {
     public static void driver() {
         BinaryTree tree = BinaryTree.simpleBT();
         PrintNodeAtDistanceKFromANode obj = new PrintNodeAtDistanceKFromANode(tree);
-        obj.printNodesAtDistance(2, 7);
+        obj.printNodesAtDistance(2, 1);
     }
 
     BinaryTree t;
@@ -47,41 +47,40 @@ public class PrintNodeAtDistanceKFromANode {
         if (searchItem != n.data) {
             int dL = printNodesAtDistanceUtil(k, searchItem, n.getLeft());
             int dR = printNodesAtDistanceUtil(k, searchItem, n.getRight());
-            
+
             if (dL == 0) {
                 System.out.println(n.data);
             } else if (dL != k) {
-                goPrint(dL - 1, n.getRight());
+                findInChild(dL - 1, n.getRight());
                 return dL - 1;
             }
 
             if (dR == 0) {
                 System.out.println(n.data);
             } else if (dR != k) {
-                goPrint(dR - 1, n.getLeft());
+                findInChild(dR - 1, n.getLeft());
                 return dR - 1;
             }
 
         } else if (n.data == searchItem) {
-            goPrint(k - 1, n.getLeft());
-            goPrint(k - 1, n.getRight());
+            findInChild(k, n);
             return k - 1;
         }
 
         return k;
     }
-    
-    private void goPrint(int k, TreeNode n) {
-        
-        if (n==null) {
+
+    private void findInChild(int k, TreeNode n) {
+
+        if (n == null) {
             return;
         }
-        
-        if (k==0) {
+
+        if (k == 0) {
             System.out.print(n.data);
         } else {
-            goPrint(k-1, n.getLeft());
-            goPrint(k-1, n.getRight());
+            findInChild(k - 1, n.getLeft());
+            findInChild(k - 1, n.getRight());
         }
     }
 }
