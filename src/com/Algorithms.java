@@ -34,6 +34,7 @@ import com.algorithms.trees.BTtoLinkedList;
 import com.algorithms.trees.BinarySearchTree;
 import com.algorithms.trees.BinarySearchTreeValidator;
 import com.algorithms.trees.BinaryTree;
+import com.algorithms.trees.BoundaryTraversal;
 import com.algorithms.trees.HuffmanEncoding;
 import com.algorithms.trees.LeafStripper;
 import com.algorithms.trees.NodesWithNoSibling;
@@ -190,6 +191,8 @@ public class Algorithms {
         PrintNodeAtDistanceKFromANode.driver(); 
         
         NodesWithNoSibling.driver();
+        
+        BoundaryTraversal.driver();
     }
     
 }
