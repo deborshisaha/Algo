@@ -8,6 +8,12 @@ public class BinaryTree {
 
     private TreeNode root;
 
+    BinaryTree(TreeNode root) {
+        this.root = root;
+    }
+
+    BinaryTree() {}
+    
     public void insert(Integer data) {
 
         TreeNode n = new TreeNode(data);
