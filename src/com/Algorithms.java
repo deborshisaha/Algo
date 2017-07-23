@@ -36,6 +36,7 @@ import com.algorithms.trees.BinarySearchTreeValidator;
 import com.algorithms.trees.BinaryTree;
 import com.algorithms.trees.HuffmanEncoding;
 import com.algorithms.trees.LeafStripper;
+import com.algorithms.trees.NodesWithNoSibling;
 import com.algorithms.trees.PrintNodeAtDistanceKFromANode;
 import com.algorithms.trees.SegmentTree;
 import com.algorithms.trees.TreeFromPreorderAndInorder;
@@ -186,7 +187,9 @@ public class Algorithms {
         
         BinarySearchTree.driver();
         
-        PrintNodeAtDistanceKFromANode.driver();
+        PrintNodeAtDistanceKFromANode.driver(); 
+        
+        NodesWithNoSibling.driver();
     }
     
 }
