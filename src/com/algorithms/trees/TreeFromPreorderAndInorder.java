@@ -55,11 +55,8 @@ public class TreeFromPreorderAndInorder {
         int[] in = new int[]{4,2,5,1,6,3,7};
         TreeFromPreorderAndInorder obj = new TreeFromPreorderAndInorder(in,pre);
         TreeNode root = obj.constructTree(0, in.length-1);
-        
         BinaryTree tree = new BinaryTree(root);
-        
-        // inorder print
-        //tree.print();
+        tree.printEachLevelInEachLine();
         
         // level order print
     }

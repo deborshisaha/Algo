@@ -12,8 +12,9 @@ public class BinaryTree {
         this.root = root;
     }
 
-    BinaryTree() {}
-    
+    BinaryTree() {
+    }
+
     public void insert(Integer data) {
 
         TreeNode n = new TreeNode(data);
@@ -78,6 +79,23 @@ public class BinaryTree {
         return bt;
     }
 
+    public static BinaryTree simpleBT() {
+        BinaryTree bt = new BinaryTree();
+        bt.insert(1);
+
+        TreeNode node = bt.getRootNode();
+        node.setLeft(new TreeNode(2));
+        node.setRight(new TreeNode(3));
+
+        node.getRight().setRight(new TreeNode(7));
+        node.getRight().setLeft(new TreeNode(6));
+
+        node.getLeft().setRight(new TreeNode(5));
+        node.getLeft().setLeft(new TreeNode(4));
+
+        return bt;
+    }
+
     public int diameter() {
         return diameterUtil(this.root);
     }
@@ -121,24 +139,36 @@ public class BinaryTree {
         Queue<TreeNode> oddQ = new LinkedList();
         Queue<TreeNode> evenQ = new LinkedList();
 
-        int level = 0;
-
         evenQ.add(this.root);
-
-        while (!oddQ.isEmpty() && !evenQ.isEmpty()) {
-
+        System.out.println();
+        while (!oddQ.isEmpty() || !evenQ.isEmpty()) {
             while (!evenQ.isEmpty()) {
                 TreeNode tn = evenQ.remove();
-                System.out.print(tn.data+" ");
-                oddQ.add(tn.getLeft());
-                oddQ.add(tn.getRight());
+                if (tn == null) {
+                    break;
+                }
+                System.out.print(tn.data + " ");
+                if (tn.getLeft() != null) {
+                    oddQ.add(tn.getLeft());
+                }
+                if (tn.getRight() != null) {
+                    oddQ.add(tn.getRight());
+                }
             }
             System.out.println();
             while (!oddQ.isEmpty()) {
                 TreeNode tn = oddQ.remove();
-                System.out.print(tn.data+" ");
-                evenQ.add(tn.getLeft());
-                evenQ.add(tn.getRight());
+                if (tn == null) {
+                    break;
+                }
+                System.out.print(tn.data + " ");
+                if (tn.getLeft() != null) {
+                    evenQ.add(tn.getLeft());
+                }
+
+                if (tn.getRight() != null) {
+                    evenQ.add(tn.getRight());
+                }
             }
             System.out.println();
         }

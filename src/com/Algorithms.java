@@ -31,11 +31,14 @@ import com.algorithms.string.*;
 import com.algorithms.suffixprefix.TST;
 import com.algorithms.suffixprefix.Trie;
 import com.algorithms.trees.BTtoLinkedList;
+import com.algorithms.trees.BinarySearchTree;
 import com.algorithms.trees.BinarySearchTreeValidator;
 import com.algorithms.trees.BinaryTree;
 import com.algorithms.trees.HuffmanEncoding;
 import com.algorithms.trees.LeafStripper;
+import com.algorithms.trees.PrintNodeAtDistanceKFromANode;
 import com.algorithms.trees.SegmentTree;
+import com.algorithms.trees.TreeFromPreorderAndInorder;
 import java.util.List;
 
 /**
@@ -178,6 +181,12 @@ public class Algorithms {
         SegmentTree.driver();
         
         BTtoLinkedList.driver();
+        
+        TreeFromPreorderAndInorder.driver();
+        
+        BinarySearchTree.driver();
+        
+        PrintNodeAtDistanceKFromANode.driver();
     }
     
 }
