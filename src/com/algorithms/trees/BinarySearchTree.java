@@ -39,18 +39,6 @@ public class BinarySearchTree extends BinaryTree {
         }
     }
 
-    public void preOrder() {
-
-    }
-
-    public void postOrder() {
-
-    }
-
-    public void inorder() {
-
-    }
-  
     // Constructors
     public static void driver () {
         BinarySearchTree bst = BinarySearchTree.create();

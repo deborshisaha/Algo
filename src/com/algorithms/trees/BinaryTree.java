@@ -189,4 +189,36 @@ public class BinaryTree {
     TreeNode getRootNode() {
         return this.root;
     }
+
+    public void preOrder(TreeNode n) {
+
+        if (n == null) {
+            return;
+        }
+
+        System.out.print(n.data + " ");
+        preOrder(n.getLeft());
+        preOrder(n.getRight());
+    }
+
+    public void postOrder(TreeNode n) {
+        if (n == null) {
+            return;
+        }
+
+        preOrder(n.getLeft());
+        preOrder(n.getRight());
+        System.out.print(n.data + " ");
+    }
+
+    public void inorder(TreeNode n) {
+        if (n == null) {
+            return;
+        }
+
+        preOrder(n.getLeft());
+        System.out.print(n.data + " ");
+        preOrder(n.getRight());
+    }
+
 }
