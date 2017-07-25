@@ -2,8 +2,10 @@ package com;
 
 import com.algorithms.arrays.*;
 import com.algorithms.binarysearch.*;
+import com.algorithms.dp.EditDistance;
 import com.algorithms.dp.KnapSack01Calculator;
 import com.algorithms.dp.MinimumCostPath;
+import com.algorithms.dp.NumberOfWaysToChange;
 import com.algorithms.dp.StairCaseFibonacci;
 import com.algorithms.dp.SubsetSum;
 import com.algorithms.dp.TextJustifier;
@@ -196,6 +198,10 @@ public class Algorithms {
         BoundaryTraversal.driver();
         
         TextJustifier.driver();
+        
+        EditDistance.driver();
+        
+        NumberOfWaysToChange.driver();
     }
     
 }
