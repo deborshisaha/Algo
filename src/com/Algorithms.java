@@ -6,6 +6,7 @@ import com.algorithms.dp.KnapSack01Calculator;
 import com.algorithms.dp.MinimumCostPath;
 import com.algorithms.dp.StairCaseFibonacci;
 import com.algorithms.dp.SubsetSum;
+import com.algorithms.dp.TextJustifier;
 import com.algorithms.dp.WeightedJobScheduler;
 import com.algorithms.graph.BridgeFinder;
 import com.algorithms.graph.CyclicUndirectedGraphCycleDetector;
@@ -193,6 +194,8 @@ public class Algorithms {
         NodesWithNoSibling.driver();
         
         BoundaryTraversal.driver();
+        
+        TextJustifier.driver();
     }
     
 }
