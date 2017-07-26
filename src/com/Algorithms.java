@@ -3,6 +3,7 @@ package com;
 import com.algorithms.arrays.*;
 import com.algorithms.binarysearch.*;
 import com.algorithms.dp.CuttingRod;
+import com.algorithms.dp.DiceWays;
 import com.algorithms.dp.EditDistance;
 import com.algorithms.dp.KnapSack01Calculator;
 import com.algorithms.dp.MinimumCostPath;
@@ -208,6 +209,8 @@ public class Algorithms {
         WordsColaesced.driver();
         
         CuttingRod.driver();
+
+        DiceWays.driver();
     }
     
 }
