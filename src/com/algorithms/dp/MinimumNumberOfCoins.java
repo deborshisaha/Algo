@@ -8,7 +8,8 @@ public class MinimumNumberOfCoins {
         System.out.println();
         System.out.println("Minimum number of coins required:"+coincounter.coinsRequiredToForm(13));
     }
-    int[] coins;
+    
+    private int[] coins;
 
     public MinimumNumberOfCoins(int[] coins) {
         this.coins = coins;
