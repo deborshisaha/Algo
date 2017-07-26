@@ -7,6 +7,7 @@ import com.algorithms.dp.DiceWays;
 import com.algorithms.dp.EditDistance;
 import com.algorithms.dp.KnapSack01Calculator;
 import com.algorithms.dp.MinimumCostPath;
+import com.algorithms.dp.MinimumNumberOfCoins;
 import com.algorithms.dp.NumberOfWaysToChange;
 import com.algorithms.dp.StairCaseFibonacci;
 import com.algorithms.dp.SubsetSum;
@@ -211,6 +212,8 @@ public class Algorithms {
         CuttingRod.driver();
 
         DiceWays.driver();
+        
+        MinimumNumberOfCoins.driver();
     }
     
 }
