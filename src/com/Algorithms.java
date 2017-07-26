@@ -10,6 +10,7 @@ import com.algorithms.dp.StairCaseFibonacci;
 import com.algorithms.dp.SubsetSum;
 import com.algorithms.dp.TextJustifier;
 import com.algorithms.dp.WeightedJobScheduler;
+import com.algorithms.dp.WordsColaesced;
 import com.algorithms.graph.BridgeFinder;
 import com.algorithms.graph.CyclicUndirectedGraphCycleDetector;
 import com.algorithms.graph.DisjointSet;
@@ -202,6 +203,8 @@ public class Algorithms {
         EditDistance.driver();
         
         NumberOfWaysToChange.driver();
+        
+        WordsColaesced.driver();
     }
     
 }
