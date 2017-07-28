@@ -36,8 +36,6 @@ public class LongestCommonSubsequence {
                 } else {
                     T[r][c] = Math.max(T[r - 1][c], T[r][c - 1]);
                 }
-                
-                System.out.println("T[r][c]:"+T[r][c]);
 
                 if (T[r][c] > max) {
                     max = T[r][c];
