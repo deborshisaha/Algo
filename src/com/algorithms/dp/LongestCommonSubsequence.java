@@ -17,20 +17,20 @@ public class LongestCommonSubsequence {
     
     public int lengthOfCommonSequence () {
     
-    	int[][] T = new int[this.string1.length+1][this.string2.length+1];
+    	int[][] T = new int[this.string1.length()+1][this.string2.length()+1];
     	
-    	for (int c =0; c < this.string2.length+1; c++) {
+    	for (int c =0; c < this.string2.length()+1; c++) {
     		T[0][c] = 0;
     	}
     	
-    	for (int r =0; r < this.string1.length+1; r++) {
+    	for (int r =0; r < this.string1.length()+1; r++) {
     		T[r][0] = 0;
     	}
     	
     	int max = 0;
     	
-    	for (int r = 1; r < this.string1.length; r++) {
-    		for (int c = 1; c < this.string2.length ; c++ ) {
+    	for (int r = 1; r < this.string1.length(); r++) {
+    		for (int c = 1; c < this.string2.length() ; c++ ) {
     			if (this.string2.charAt(c) == this.string1.charAt(r)) {
     				T[r][c] = T[r-1][c-1] + 1;
     			} else {
