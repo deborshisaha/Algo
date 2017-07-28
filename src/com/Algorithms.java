@@ -2,14 +2,18 @@ package com;
 
 import com.algorithms.arrays.*;
 import com.algorithms.binarysearch.*;
+import com.algorithms.dp.CountNumberOfBinaryWithoutConsecutive1s;
 import com.algorithms.dp.CuttingRod;
 import com.algorithms.dp.DiceWays;
 import com.algorithms.dp.EditDistance;
 import com.algorithms.dp.KnapSack01Calculator;
+import com.algorithms.dp.LongestCommonSubsequence;
 import com.algorithms.dp.MinimumCostPath;
 import com.algorithms.dp.MinimumNumberOfCoins;
 import com.algorithms.dp.NumberOfWaysToChange;
+import com.algorithms.dp.NumberOfWaysToScorePoints;
 import com.algorithms.dp.StairCaseFibonacci;
+import com.algorithms.dp.StringInterleaving;
 import com.algorithms.dp.SubsetSum;
 import com.algorithms.dp.TextJustifier;
 import com.algorithms.dp.WeightedJobScheduler;
@@ -214,6 +218,14 @@ public class Algorithms {
         DiceWays.driver();
         
         MinimumNumberOfCoins.driver();
+        
+        CountNumberOfBinaryWithoutConsecutive1s.driver();
+        
+        StringInterleaving.driver();
+        
+        NumberOfWaysToScorePoints.driver();
+        
+        LongestCommonSubsequence.driver();
     }
     
 }
