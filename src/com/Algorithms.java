@@ -8,6 +8,7 @@ import com.algorithms.dp.DiceWays;
 import com.algorithms.dp.EditDistance;
 import com.algorithms.dp.KnapSack01Calculator;
 import com.algorithms.dp.LongestCommonSubsequence;
+import com.algorithms.dp.LongestCommonSubstring;
 import com.algorithms.dp.MinimumCostPath;
 import com.algorithms.dp.MinimumNumberOfCoins;
 import com.algorithms.dp.NumberOfWaysToChange;
@@ -226,6 +227,8 @@ public class Algorithms {
         NumberOfWaysToScorePoints.driver();
         
         LongestCommonSubsequence.driver();
+        
+        LongestCommonSubstring.driver();
     }
     
 }
