@@ -11,6 +11,7 @@ import com.algorithms.dp.LongestCommonSubsequence;
 import com.algorithms.dp.LongestCommonSubstring;
 import com.algorithms.dp.LongestIncreasingSubequence;
 import com.algorithms.dp.MinimumCostPath;
+import com.algorithms.dp.MinimumJumpToReachEnd;
 import com.algorithms.dp.MinimumNumberOfCoins;
 import com.algorithms.dp.NumberOfWaysToChange;
 import com.algorithms.dp.NumberOfWaysToScorePoints;
@@ -235,6 +236,8 @@ public class Algorithms {
         LongestIncreasingSubequence.driver();
         
         SumQueryIn2DImmutableArray.driver();
+        
+        MinimumJumpToReachEnd.driver();
     }
     
 }
