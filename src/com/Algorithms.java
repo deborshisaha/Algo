@@ -10,6 +10,8 @@ import com.algorithms.dp.KnapSack01Calculator;
 import com.algorithms.dp.LongestCommonSubsequence;
 import com.algorithms.dp.LongestCommonSubstring;
 import com.algorithms.dp.LongestIncreasingSubequence;
+import com.algorithms.dp.MaxSumIncreasingSubsequence;
+import com.algorithms.dp.MaxSumSubsequenceNonAdjacent;
 import com.algorithms.dp.MinimumCostPath;
 import com.algorithms.dp.MinimumJumpToReachEnd;
 import com.algorithms.dp.MinimumNumberOfCoins;
@@ -238,6 +240,10 @@ public class Algorithms {
         SumQueryIn2DImmutableArray.driver();
         
         MinimumJumpToReachEnd.driver();
+        
+        MaxSumIncreasingSubsequence.driver();
+        
+        MaxSumSubsequenceNonAdjacent.driver();
     }
     
 }
