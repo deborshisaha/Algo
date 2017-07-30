@@ -21,6 +21,7 @@ import com.algorithms.dp.NumberOfWaysToChange;
 import com.algorithms.dp.NumberOfWaysToScorePoints;
 import com.algorithms.dp.PalindromePartitioning;
 import com.algorithms.dp.StairCaseFibonacci;
+import com.algorithms.dp.StockBuySellKtransactions;
 import com.algorithms.dp.StringInterleaving;
 import com.algorithms.dp.SubsetSum;
 import com.algorithms.dp.SumQueryIn2DImmutableArray;
@@ -253,6 +254,8 @@ public class Algorithms {
         LongestPalindromeSubsequence.driver();
         
         PalindromePartitioning.driver();
+        
+        StockBuySellKtransactions.driver();
     }
     
 }
