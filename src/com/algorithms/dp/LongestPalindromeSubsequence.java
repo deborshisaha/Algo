@@ -1,8 +1,5 @@
 package com.algorithms.dp;
 
-import java.util.Arrays;
-import java.util.stream.Collectors;
-
 public class LongestPalindromeSubsequence {
 
     public static void driver() {
@@ -10,7 +7,7 @@ public class LongestPalindromeSubsequence {
         System.out.println("LongestPalindromeSubsequence:" + obj.longestSubsequence());
     }
 
-    private String input;
+    private final String input;
 
     public LongestPalindromeSubsequence(String input) {
         this.input = input;

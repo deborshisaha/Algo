@@ -19,6 +19,7 @@ import com.algorithms.dp.MinimumJumpToReachEnd;
 import com.algorithms.dp.MinimumNumberOfCoins;
 import com.algorithms.dp.NumberOfWaysToChange;
 import com.algorithms.dp.NumberOfWaysToScorePoints;
+import com.algorithms.dp.PalindromePartitioning;
 import com.algorithms.dp.StairCaseFibonacci;
 import com.algorithms.dp.StringInterleaving;
 import com.algorithms.dp.SubsetSum;
@@ -250,6 +251,8 @@ public class Algorithms {
         LongestIncreasingSubsequence.driver();
         
         LongestPalindromeSubsequence.driver();
+        
+        PalindromePartitioning.driver();
     }
     
 }
