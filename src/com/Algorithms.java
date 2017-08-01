@@ -12,6 +12,7 @@ import com.algorithms.dp.LongestCommonSubstring;
 import com.algorithms.dp.LongestIncreasingSubequence;
 import com.algorithms.dp.LongestIncreasingSubsequence;
 import com.algorithms.dp.LongestPalindromeSubsequence;
+import com.algorithms.dp.MNPathMatrix;
 import com.algorithms.dp.MaxSumIncreasingSubsequence;
 import com.algorithms.dp.MaxSumSubsequenceNonAdjacent;
 import com.algorithms.dp.MinimumCostPath;
@@ -256,6 +257,8 @@ public class Algorithms {
         PalindromePartitioning.driver();
         
         StockBuySellKtransactions.driver();
+        
+        MNPathMatrix.driver();
     }
     
 }
