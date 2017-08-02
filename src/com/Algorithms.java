@@ -5,6 +5,7 @@ import com.algorithms.binarysearch.*;
 import com.algorithms.dp.CountNumberOfBinaryWithoutConsecutive1s;
 import com.algorithms.dp.CuttingRod;
 import com.algorithms.dp.DiceWays;
+import com.algorithms.dp.DistinctSubsequences;
 import com.algorithms.dp.DungeonGame;
 import com.algorithms.dp.EditDistance;
 import com.algorithms.dp.KnapSack01Calculator;
@@ -262,6 +263,8 @@ public class Algorithms {
         MNPathMatrix.driver();
         
         DungeonGame.driver();
+        
+        DistinctSubsequences.driver();
     }
     
 }
