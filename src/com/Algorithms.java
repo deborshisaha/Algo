@@ -23,6 +23,7 @@ import com.algorithms.dp.MinimumNumberOfCoins;
 import com.algorithms.dp.NumberOfWaysToChange;
 import com.algorithms.dp.NumberOfWaysToScorePoints;
 import com.algorithms.dp.PalindromePartitioning;
+import com.algorithms.dp.RegexMatcher;
 import com.algorithms.dp.StairCaseFibonacci;
 import com.algorithms.dp.StockBuySellKtransactions;
 import com.algorithms.dp.StringInterleaving;
@@ -265,6 +266,8 @@ public class Algorithms {
         DungeonGame.driver();
         
         DistinctSubsequences.driver();
+        
+        RegexMatcher.driver();
     }
     
 }
