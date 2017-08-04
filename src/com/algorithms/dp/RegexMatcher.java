@@ -20,7 +20,6 @@ public class RegexMatcher {
         
         T[0][0] = true;
         
-        // column
         for (int c = 1; c <= m; c++) {
             if (pattern.charAt(c - 1) == '*') {
                 if (c == 1) {
