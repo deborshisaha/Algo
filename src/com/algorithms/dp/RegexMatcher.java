@@ -17,9 +17,10 @@ public class RegexMatcher {
         int n = text.length();
 
         boolean[][] T = new boolean[n + 1][m + 1];
-
-        // column
-        for (int c = 1; c < m; c++) {
+        
+        T[0][0] = true;
+        
+        for (int c = 1; c <= m; c++) {
             if (pattern.charAt(c - 1) == '*') {
                 if (c == 1) {
                     T[0][c] = true;
@@ -29,20 +30,14 @@ public class RegexMatcher {
             }
         }
 
-        T[0][0] = true;
-
         for (int r = 1; r <= n; r++) {
             for (int c = 1; c <= m; c++) {
 
                 if (text.charAt(r - 1) == pattern.charAt(c - 1) || pattern.charAt(c - 1) == '.') {
-                    System.out.println("Match pattern:" + pattern.charAt(c - 1) + " text:" + text.charAt(r - 1) + (c - 1) + (r - 1));
                     T[r][c] = T[r - 1][c - 1];
                 } else if (pattern.charAt(c - 1) == '*') {
-                    System.out.println("Match pattern:" + pattern.charAt(c - 1) + " " + (c - 1));
-
                     T[r][c] = T[r][c - 2];
                     if (pattern.charAt(c - 2) == '.' || pattern.charAt(c - 2) == text.charAt(r - 1)) {
-                        System.out.print(pattern.charAt(c - 2) + ":" + text.charAt(r - 1) + "Hahahaha" + (pattern.charAt(c - 2) == text.charAt(r - 1)));
                         T[r][c] = T[r][c] | T[r - 1][c];
                     }
                 } else {
@@ -54,13 +49,6 @@ public class RegexMatcher {
             }
         }
 
-        for (int r = 0; r <= n; r++) {
-            System.out.println();
-            for (int c = 0; c <= m; c++) {
-
-                System.out.print(T[r][c]+" ");
-            }
-        }
         return T[n][m];
     }
     

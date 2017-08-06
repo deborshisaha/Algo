@@ -1,10 +1,3 @@
-/*
- * decreasKey
- * delete
- * add
- * extractMin
- * contains - (extended capability with HashMap)
- */
 package com.algorithms.graph;
 
 import java.util.ArrayList;
@@ -57,6 +50,7 @@ public class BinaryMinHeap<T> {
 
     /**
      * Get the heap min without extracting the key
+     * @return 
      */
     public T min(){
         return allNodes.get(0).key;
