@@ -36,6 +36,7 @@ import com.algorithms.graph.BridgeFinder;
 import com.algorithms.graph.CyclicUndirectedGraphCycleDetector;
 import com.algorithms.graph.DisjointSet;
 import com.algorithms.graph.TopologicalSort;
+import com.algorithms.greedy.ActivitySelection;
 import com.algorithms.linkedlist.DeleteDuplicatesInALinkedList;
 import com.algorithms.linkedlist.DeleteNAfterMNodes;
 import com.algorithms.linkedlist.ReverseAlternateKNodes;
@@ -268,6 +269,8 @@ public class Algorithms {
         DistinctSubsequences.driver();
         
         RegexMatcher.driver();
+        
+        ActivitySelection.driver();
     }
     
 }
