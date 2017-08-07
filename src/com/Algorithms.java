@@ -38,6 +38,8 @@ import com.algorithms.graph.DisjointSet;
 import com.algorithms.graph.TopologicalSort;
 import com.algorithms.greedy.ActivitySelection;
 import com.algorithms.greedy.FractionalKnapsack;
+import com.algorithms.greedy.JobSequenceProblem;
+import com.algorithms.greedy.MinimumNumberOfPlatforms;
 import com.algorithms.linkedlist.DeleteDuplicatesInALinkedList;
 import com.algorithms.linkedlist.DeleteNAfterMNodes;
 import com.algorithms.linkedlist.ReverseAlternateKNodes;
@@ -83,197 +85,207 @@ public class Algorithms {
         // TODO code application logic here
 
         ThreeSum threeSum = new ThreeSum();
-        int[] array = new int[]{-1,0,2,1,1,4,3};
+        int[] array = new int[]{-1, 0, 2, 1, 1, 4, 3};
         List<List<Integer>> result = threeSum.getListOfListOfIntegers(5, array);
-        
+
         if (result.size() > 0) {
 
             result.forEach((list) -> {
                 list.forEach((lis) -> {
-                    System.out.print(lis+",");
+                    System.out.print(lis + ",");
                 });
-                
+
                 System.out.print("\n");
             });
         }
-        
+
         SmallestWindowContaingAllCharacters.driver();
         KMPSubstringSearch.driver();
         AbbreviationChecker.driver();
         LongestPalindromeSubstring.driver();
-        
+
         System.out.println("\n+---------------------------------------------------------+");
         System.out.println("| LongestSubstringWithKDistinctCharacters                 |");
         System.out.println("+---------------------------------------------------------+");
         LongestSubstringWithKDistinctCharacters.driver();
-        
+
         System.out.println("\n+---------------------------------------------------------+");
         System.out.println("| Palindrome Pair                                         |");
         System.out.println("+---------------------------------------------------------+");
         PalindromePair.driver();
-        
+
         System.out.println("\n+---------------------------------------------------------+");
         System.out.println("| BestTimeToBuyAndSellAStock                              |");
         System.out.println("+---------------------------------------------------------+");
         BestTimeToBuyAndSellAStock.driver();
-        
+
         System.out.println("\n+---------------------------------------------------------+");
         System.out.println("| SelfCrossing                                            |");
         System.out.println("+---------------------------------------------------------+");
         SelfCrossing.driver();
-        
+
         System.out.println("\n+---------------------------------------------------------+");
         System.out.println("| Median Of Two Sorted Arrays                             |");
         System.out.println("+---------------------------------------------------------+");
         MedianOfTwoSortedArrays.driver();
-        
+
         TotalScore.driver();
         System.out.println("\n+---------------------------------------------------------+");
         System.out.println("| Delete Duplicates in a linked list                      |");
         System.out.println("+---------------------------------------------------------+");
         DeleteDuplicatesInALinkedList.driver();
-        
+
         System.out.println("\n+---------------------------------------------------------+");
         System.out.println("| Delete M nodes after N nodes                            |");
         System.out.println("+---------------------------------------------------------+");
         DeleteNAfterMNodes.driver();
-        
+
         System.out.println("\n+---------------------------------------------------------+");
         System.out.println("| Reverse k Nodes                                         |");
         System.out.println("+---------------------------------------------------------+");
         ReverseAlternateKNodes.driver();
-        
+
         KnapSack01Calculator.driver();
-        
+
         WeightedJobScheduler.driver();
-        
+
         StairCaseFibonacci.driver();
         SubsetSum.driver();
         MinimumCostPath.driver();
-        
+
         TopologicalSort.driver();
         DisjointSet.driver();
         CyclicUndirectedGraphCycleDetector.driver();
-        
+
         BridgeFinder.driver();
-        
+
         BinarySearchTreeValidator.driver();
-        
-        System.out.println("Diameter: "+ BinaryTree.createNotBST().diameter());
-        
+
+        System.out.println("Diameter: " + BinaryTree.createNotBST().diameter());
+
         LeafStripper.driver();
-        
+
         HuffmanEncoding.driver();
-        
+
         Shuffler.driver();
-        
+
         Rand7UsingRand5.driver();
-        
+
         ReservoirSampler.driver();
-        
+
         RandomCountrySelectionByPopulation.driver();
-        
+
         BracketChecker.driver();
-        
+
         SudokuSolver.driver();
-        
+
         //WordsPossibleUsingAPhoneNumber.driver();
-        
         //NQueen.driver();
-        
         TripPlanner.driver();
         System.out.println();
         RestoreIPAddress.driver();
-        
+
         LongestAbsolutePath.driver();
-        
+
         AllCombinationsAtDistanceK.driver();
-        
+
         ChainWordsToCircle.driver();
-        
+
         ArithmeticProgressionSearch.driver();
-        
+
         MissingNumberInConsecutiveNumbers.driver();
-        
+
         PeakElementFinder.driver();
-        
+
         BinarySearch.driver();
-        
+
         FirstOccurrenceOfNumberInSortedArray.driver();
-        
+
         MedianFinderIn2SortedArrays.driver();
-        
+
         TST.driver();
-        
+
         Trie.driver();
-        
+
         SegmentTree.driver();
-        
+
         BTtoLinkedList.driver();
-        
+
         TreeFromPreorderAndInorder.driver();
-        
+
         BinarySearchTree.driver();
-        
-        PrintNodeAtDistanceKFromANode.driver(); 
-        
+
+        PrintNodeAtDistanceKFromANode.driver();
+
         NodesWithNoSibling.driver();
-        
+
         BoundaryTraversal.driver();
-        
+
         TextJustifier.driver();
-        
+
         EditDistance.driver();
-        
+
         NumberOfWaysToChange.driver();
-        
+
         WordsColaesced.driver();
-        
+
         CuttingRod.driver();
 
         DiceWays.driver();
-        
+
         MinimumNumberOfCoins.driver();
-        
+
         CountNumberOfBinaryWithoutConsecutive1s.driver();
-        
+
         StringInterleaving.driver();
-        
+
         NumberOfWaysToScorePoints.driver();
-        
+
         LongestCommonSubsequence.driver();
-        
+
         LongestCommonSubstring.driver();
-        
+
         LongestIncreasingSubequence.driver();
-        
+
         SumQueryIn2DImmutableArray.driver();
-        
+
         MinimumJumpToReachEnd.driver();
-        
+
         MaxSumIncreasingSubsequence.driver();
-        
+
         MaxSumSubsequenceNonAdjacent.driver();
-        
+
         LongestIncreasingSubsequence.driver();
-        
+
         LongestPalindromeSubsequence.driver();
-        
+
         PalindromePartitioning.driver();
-        
+
         StockBuySellKtransactions.driver();
-        
+
         MNPathMatrix.driver();
-        
+
         DungeonGame.driver();
-        
+
         DistinctSubsequences.driver();
-        
+        System.out.println("\n+---------------------------------------------------------+");
+        System.out.println("| Regex Matcher                                           |");
+        System.out.println("+---------------------------------------------------------+");
         RegexMatcher.driver();
-        
+
         ActivitySelection.driver();
-        
+
         FractionalKnapsack.driver();
+
+        System.out.println("\n+---------------------------------------------------------+");
+        System.out.println("| Job Sequence Problem                                    |");
+        System.out.println("+---------------------------------------------------------+");
+        JobSequenceProblem.driver();
+
+        System.out.println("\n+---------------------------------------------------------+");
+        System.out.println("| Minimum Number Of Platforms                             |");
+        System.out.println("+---------------------------------------------------------+");
+        MinimumNumberOfPlatforms.driver();
     }
-    
+
 }

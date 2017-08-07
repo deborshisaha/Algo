@@ -4,8 +4,8 @@ public class RegexMatcher {
 
     public static void driver() {
         RegexMatcher matcher = new RegexMatcher();
-        System.out.println("Pattern matches:" + (matcher.matchRegexRecursive("aa".toCharArray(), "a*".toCharArray()) ? "Yes" : "No"));
-        System.out.println("Pattern matches:" + (matcher.matches("a*", "aa") ? "Yes" : "No"));
+        System.out.println("Pattern matches:" + (matcher.matchRegexRecursive("aabc".toCharArray(), "*".toCharArray()) ? "Yes" : "No"));
+        System.out.println("Pattern matches:" + (matcher.matches("a*", "aabc") ? "Yes" : "No"));
     }
 
     public boolean matches(String pattern, String text) {
