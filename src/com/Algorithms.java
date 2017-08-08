@@ -37,6 +37,7 @@ import com.algorithms.graph.CyclicUndirectedGraphCycleDetector;
 import com.algorithms.graph.DisjointSet;
 import com.algorithms.graph.TopologicalSort;
 import com.algorithms.greedy.ActivitySelection;
+import com.algorithms.greedy.ConnectNRopes;
 import com.algorithms.greedy.FractionalKnapsack;
 import com.algorithms.greedy.JobSequenceProblem;
 import com.algorithms.greedy.MinimumNumberOfPlatforms;
@@ -286,6 +287,8 @@ public class Algorithms {
         System.out.println("| Minimum Number Of Platforms                             |");
         System.out.println("+---------------------------------------------------------+");
         MinimumNumberOfPlatforms.driver();
+        
+        ConnectNRopes.driver();
     }
 
 }
