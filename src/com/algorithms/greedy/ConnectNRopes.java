@@ -9,7 +9,7 @@ public class ConnectNRopes {
 
         int[] ropes = new int[]{4, 3, 2, 6};
 
-        System.out.println("++++" + costFinder.findCostToJoin(ropes));
+        System.out.println("4,3,2,6 =" + costFinder.findCostToJoin(ropes));
     }
 
     public int findCostToJoin(int[] ropes) {

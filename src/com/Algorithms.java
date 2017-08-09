@@ -287,7 +287,10 @@ public class Algorithms {
         System.out.println("| Minimum Number Of Platforms                             |");
         System.out.println("+---------------------------------------------------------+");
         MinimumNumberOfPlatforms.driver();
-        
+
+        System.out.println("\n+---------------------------------------------------------+");
+        System.out.println("| Connect N Ropes                                         |");
+        System.out.println("+---------------------------------------------------------+");
         ConnectNRopes.driver();
     }
 
