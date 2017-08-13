@@ -301,6 +301,31 @@ public class Algorithms {
         System.out.println("| Minimum sorted which sorts entire array                 |");
         System.out.println("+---------------------------------------------------------+");
         MinimumSortedWhichSortsEntireArray.driver();
+
+        System.out.println("\n+---------------------------------------------------------+");
+        System.out.println("| Multiply All Fields Except Own Position                 |");
+        System.out.println("+---------------------------------------------------------+");
+        MultiplyAllFieldsExceptOwnPosition.driver();
+
+        System.out.println("\n+---------------------------------------------------------+");
+        System.out.println("| Nujmber of triangles in unsorted array                  |");
+        System.out.println("+---------------------------------------------------------+");
+        NumberOfTrianglesInUnsortedArray.driver();
+
+        System.out.println("\n+---------------------------------------------------------+");
+        System.out.println("| Distance between two numbers                            |");
+        System.out.println("+---------------------------------------------------------+");
+        DistanceBetweenTwoNumbers.driver();
+
+        System.out.println("\n+---------------------------------------------------------+");
+        System.out.println("| Maximum Repeating number                                |");
+        System.out.println("+---------------------------------------------------------+");
+        MaximumRepeatingNumber.driver();
+
+        System.out.println("\n+---------------------------------------------------------+");
+        System.out.println("| Postive and Negative number                             |");
+        System.out.println("+---------------------------------------------------------+");
+        PositiveAndNegativeNumberAlternatively.driver();
     }
 
 }

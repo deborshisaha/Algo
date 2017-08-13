@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.algorithms.arrays;
 
-/**
- *
- * @author dsaha
- */
 public class MinimumSortedWhichSortsEntireArray {
 
     public static void driver() {
@@ -16,7 +7,7 @@ public class MinimumSortedWhichSortsEntireArray {
         int[] input = new int[]{-7,-6,0, 1, 2, -5, 5, 3, 4, 10};
         Range r = obj.getRange(input);
 
-        System.out.print("Range: " + r.start + "-" + r.end);
+        System.out.print("Range: " + r.start + " to " + r.end);
     }
 
     public Range getRange(int[] array) {
@@ -49,7 +40,7 @@ public class MinimumSortedWhichSortsEntireArray {
                 r.start = i;
             }
         }
-        System.out.print(lmaximum);
+
         for (int i = r.end+1; i < array.length; i++) {
             if (lmaximum > array[i]) {
                 r.end = i;
