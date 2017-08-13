@@ -1,72 +1,60 @@
 package com.algorithms.graph;
 
+import com.algorithms.TreeNode;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DisjointSet<Generic> {
+public class DisjointSet<T> {
     
-    private Map<Generic,DisjointSetNode> map = new HashMap<>();
+    private Map<T,TreeNode> map = new HashMap<>();
     
-    // Disjoint Set APIs
-    class DisjointSetNode<Generic> {
-        int rank;
-        Generic data;
-        DisjointSetNode parent;
-        
-        DisjointSetNode(){}
-        
-        DisjointSetNode(Generic data) {
-            this.data = data;
-        }
-    }
-
     // makeSet
-    public void makeSet(Generic data) {
-        DisjointSetNode<Generic> node = new DisjointSetNode<>(data);
-        node.parent = node;
-        node.rank = 0;
+    public void makeSet(T data) {
+        TreeNode<T> node = new TreeNode<>(data);
+        node.setParent(node);
+        node.setRank(0);
         map.put(data, node);
     }
     
     // Union
     // returns true if data are in same set or false if data are in different set
-    public boolean union(Generic a, Generic b) {
+    public boolean union(T a, T b) {
         
-        DisjointSetNode<Generic> one = map.get(a);
-        DisjointSetNode<Generic> two = map.get(b);
+        TreeNode<T> one = map.get(a);
+        TreeNode<T> two = map.get(b);
         
         // Find the set to which they belong and then make union
-        DisjointSetNode<Generic> parentOne = findSet(a);
-        DisjointSetNode<Generic> parentTwo = findSet(b);
+        TreeNode<T> parentOne = findSet(a);
+        TreeNode<T> parentTwo = findSet(b);
         
         if (parentOne.data == parentTwo.data) {
             return true;
         }
         
-        if (parentTwo.rank > parentOne.rank) {
-            parentOne.parent = parentTwo;
+        if (parentTwo.getRank() > parentOne.getRank()) {
+            parentOne.setParent(parentTwo);
         } else {
-            parentTwo.parent = parentOne;
-            parentOne.rank = ((parentOne.rank == parentTwo.rank)?(parentOne.rank+1):parentOne.rank);
+            parentTwo.setParent(parentOne);
+            parentOne.setRank(((parentOne.getRank() == parentTwo.getRank())?(parentOne.getRank()+1):parentOne.getRank()));
         }
         
         return false;
     }
     
     // findSet
-    public DisjointSetNode<Generic> findSet(Generic a) {
-        DisjointSetNode<Generic> one = map.get(a);
-        DisjointSetNode<Generic> node = one.parent;
-        while (node!= node.parent) {
-            node = node.parent;
+    public TreeNode<T> findSet(T a) {
+        TreeNode<T> one = map.get(a);
+        TreeNode<T> node = one.getParent();
+        while (node!= node.getParent()) {
+            node = node.getParent();
         }
         
-        one.parent = node;
-        return one.parent;
+        one.setParent(node);// = node;
+        return one.getParent();
     }
     
     public static void driver() {
-        DisjointSet<Integer> ds = new DisjointSet<Integer>();
+        DisjointSet<Integer> ds = new DisjointSet();
         ds.makeSet(1);
         ds.makeSet(2);
         ds.makeSet(3);

@@ -14,7 +14,7 @@ public class BinarySearchTreeValidator {
         return isBST;
     }
     
-    private static boolean isBSTUtil(TreeNode node, Integer max, Integer min) {
+    private static boolean isBSTUtil(TreeNode<Integer> node, Integer max, Integer min) {
         
         if (node==null) {
             return true;

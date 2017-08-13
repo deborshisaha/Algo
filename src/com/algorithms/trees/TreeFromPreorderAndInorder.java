@@ -14,13 +14,13 @@ public class TreeFromPreorderAndInorder {
 
     private int preorderIndex = 0;
 
-    public TreeNode constructTree(int inStart, int inEnd) {
+    public TreeNode<Integer> constructTree(int inStart, int inEnd) {
 
         if (inStart > inEnd) {
             return null;
         }
 
-        TreeNode tn = new TreeNode(this.preorder[preorderIndex++]);
+        TreeNode<Integer> tn = new TreeNode(this.preorder[preorderIndex++]);
 
         if (inStart == inEnd) {
             return tn;
@@ -54,7 +54,7 @@ public class TreeFromPreorderAndInorder {
         int[] pre = new int[]{1,2,4,5,3,6,7};
         int[] in = new int[]{4,2,5,1,6,3,7};
         TreeFromPreorderAndInorder obj = new TreeFromPreorderAndInorder(in,pre);
-        TreeNode root = obj.constructTree(0, in.length-1);
+        TreeNode<Integer> root = obj.constructTree(0, in.length-1);
         BinaryTree tree = new BinaryTree(root);
         tree.printEachLevelInEachLine();
         

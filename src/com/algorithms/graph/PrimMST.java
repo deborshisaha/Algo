@@ -6,17 +6,17 @@ import java.util.Map;
 
 public class PrimMST {
     
-    public ArrayList<Edge> apply(Graph g, Vertex<Integer> distanceFrom) {
+    public ArrayList<Graph.Edge> apply(Graph g, Graph.Vertex<Integer> distanceFrom) {
 
-        ArrayList<Edge> result = new ArrayList<Edge>();
+        ArrayList<Graph.Edge> result = new ArrayList();
         
         // Initialize minHeap
-        BinaryMinHeap<Vertex<Integer>> minHeap = new BinaryMinHeap<Vertex<Integer>>();
+        BinaryMinHeap<Graph.Vertex<Integer>> minHeap = new BinaryMinHeap<Graph.Vertex<Integer>>();
 
         // Path map
-        Map<Vertex<Integer>, Edge> parentMap = new HashMap<Vertex<Integer>, Edge>();
+        Map<Graph.Vertex<Integer>, Graph.Edge> parentMap = new HashMap<Graph.Vertex<Integer>, Graph.Edge>();
 
-        for (Vertex<Integer> v : g.getVertices()) {
+        for (Graph.Vertex<Integer> v : g.getVertices()) {
 
             if (distanceFrom == v) {
                 minHeap.add(0, v);
@@ -28,19 +28,19 @@ public class PrimMST {
         while (!minHeap.empty()) {
             
             // 1. Extract minimum from the heap
-            Vertex<Integer> current = minHeap.extractMin();
+            Graph.Vertex<Integer> current = minHeap.extractMin();
             
             // 2. Add edges of the tree
-            Edge STE = parentMap.get(current);
+            Graph.Edge STE = parentMap.get(current);
             if (STE!=null) {
                 result.add(STE);
             }
             
             // 3. Start exploring children of the vertex that was just added
-            for (Edge e : current.getEdges()) {
+            for (Graph.Edge e : current.getEdges()) {
 
                 // 3.a get vertext for an edge
-                Vertex v = getVertexForEdge(current, e);
+                Graph.Vertex v = getVertexForEdge(current, e);
 
                 // 3.b If we find an edge into a vertex with weight less than what 
                 //     was previously explored, update minheap and parentMap
@@ -54,7 +54,7 @@ public class PrimMST {
         return result;
     }
     
-    private Vertex getVertexForEdge(Vertex v, Edge e){
+    private Graph.Vertex getVertexForEdge(Graph.Vertex v, Graph.Edge e){
         return e.getDestination().equals(v) ? e.getDestination() : e.getSource();
     }
 }

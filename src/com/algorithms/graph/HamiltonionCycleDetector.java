@@ -8,10 +8,10 @@ import java.util.Set;
 public class HamiltonionCycleDetector {
 
     private Graph g;
-    private Set<Vertex<Integer>> visitedSet = new HashSet<Vertex<Integer>>();
-    private List<Vertex<Integer>> result = new ArrayList<Vertex<Integer>>();
+    private Set<Graph.Vertex<Integer>> visitedSet = new HashSet<Graph.Vertex<Integer>>();
+    private List<Graph.Vertex<Integer>> result = new ArrayList<Graph.Vertex<Integer>>();
 
-    private Vertex startVertex = null;
+    private Graph.Vertex startVertex = null;
 
     public HamiltonionCycleDetector(Graph g) {
         this.g = g;
@@ -22,12 +22,12 @@ public class HamiltonionCycleDetector {
         return isHamlitonianUtil(this.startVertex);
     }
 
-    private boolean isHamlitonianUtil(Vertex<Integer> currentVertex) {
+    private boolean isHamlitonianUtil(Graph.Vertex<Integer> currentVertex) {
 
         this.visitedSet.add(currentVertex);
         this.result.add(currentVertex);
 
-        for (Vertex<Integer> childV : currentVertex.getChildren()) {
+        for (Graph.Vertex<Integer> childV : currentVertex.getChildren()) {
 
             if (this.startVertex == childV && this.result.size() == this.g.getVertices().size()) {
                 return true;

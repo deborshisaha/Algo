@@ -12,11 +12,11 @@ public class TopologicalSort {
     }
 
     private Graph graph;
-    private Set<Vertex> visitedSet = new HashSet<Vertex>();
-    private Stack<Vertex> stack = new Stack<Vertex>();
+    private Set<Graph.Vertex> visitedSet = new HashSet<Graph.Vertex>();
+    private Stack<Graph.Vertex> stack = new Stack<Graph.Vertex>();
 
-    private Vertex<String> getStartVertex() {
-        for (Vertex<String> v : this.graph.getVertices()) {
+    private Graph.Vertex<String> getStartVertex() {
+        for (Graph.Vertex<String> v : this.graph.getVertices()) {
             if (!this.visitedSet.contains(v)) {
                 return v;
             }
@@ -25,7 +25,7 @@ public class TopologicalSort {
     }
 
     public ArrayList<String> getOrder() {
-        Vertex sv = getStartVertex();
+        Graph.Vertex sv = getStartVertex();
         while (sv != null) {
             if (explore(sv)) {
                 sv = getStartVertex();
@@ -35,7 +35,7 @@ public class TopologicalSort {
         ArrayList<String> list = new ArrayList<String>();
 
         while (!this.stack.empty()) {
-            Vertex vi = this.stack.pop();
+            Graph.Vertex vi = this.stack.pop();
             list.add(vi.getIdentifier());
             //System.out.print(vi.getIdentifier());
             
@@ -44,13 +44,13 @@ public class TopologicalSort {
         return list;
     }
 
-    private boolean explore(Vertex<String> v) {
+    private boolean explore(Graph.Vertex<String> v) {
 
         boolean allChildVisited = true;
 
         this.visitedSet.add(v);
 
-        for (Vertex<String> cv : v.getChildren()) {
+        for (Graph.Vertex<String> cv : v.getChildren()) {
             if (!this.visitedSet.contains(cv)) {
                 allChildVisited = explore(cv);
             }

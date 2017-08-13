@@ -29,7 +29,7 @@ public class PrintNodeAtDistanceKFromANode {
         printNodesAtDistanceUtil(k, sI, this.t.getRootNode());
     }
 
-    public int printNodesAtDistanceUtil(int k, int searchItem, TreeNode n) {
+    public int printNodesAtDistanceUtil(int k, int searchItem, TreeNode<Integer> n) {
 
         if (k < 0) {
             return 0;
@@ -70,7 +70,7 @@ public class PrintNodeAtDistanceKFromANode {
         return k;
     }
 
-    private void findInChild(int k, TreeNode n) {
+    private void findInChild(int k, TreeNode<Integer> n) {
 
         if (n == null) {
             return;

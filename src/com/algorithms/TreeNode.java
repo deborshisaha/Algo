@@ -1,15 +1,18 @@
 package com.algorithms;
 
-public class TreeNode {
+public class TreeNode<T> {
 
-    public Integer data;
+    public T data;
     private TreeNode left;
     private TreeNode right;
-
-    public TreeNode(Integer data) {
+    private Integer rank;
+    private Integer id;
+    
+    public TreeNode(T data) {
         this.data = data;
         this.left = null;
         this.right = null;
+        this.id = (int)(Math.random()*1000);
     }
 
     public void setLeft(TreeNode tn) {
@@ -27,12 +30,40 @@ public class TreeNode {
     public void setNext(TreeNode tn) {
         this.right = tn;
     }
-    
-    public TreeNode getNext() {return this.right;}
-    
-    public TreeNode getPrevious() {return this.left;}
-    
-    public TreeNode getLeft() {return this.left;}
-    
-    public TreeNode getRight() {return this.right;}
+
+    public void setParent(TreeNode n) {
+        this.left = n;
+    }
+
+    public void setRank(Integer r) {
+        this.rank = r;
+    }
+
+    public TreeNode getNext() {
+        return this.right;
+    }
+
+    public Integer getRank() {
+        return this.rank;
+    }
+
+    public TreeNode getPrevious() {
+        return this.left;
+    }
+
+    public TreeNode getLeft() {
+        return this.left;
+    }
+
+    public TreeNode getRight() {
+        return this.right;
+    }
+
+    public TreeNode getParent() {
+        return this.left;
+    }
+
+    public Integer getId() {
+        return this.id;
+    }
 }

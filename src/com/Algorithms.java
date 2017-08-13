@@ -32,7 +32,7 @@ import com.algorithms.dp.SumQueryIn2DImmutableArray;
 import com.algorithms.dp.TextJustifier;
 import com.algorithms.dp.WeightedJobScheduler;
 import com.algorithms.dp.WordsColaesced;
-import com.algorithms.graph.BridgeFinder;
+//import com.algorithms.graph.BridgeFinder;
 import com.algorithms.graph.CyclicUndirectedGraphCycleDetector;
 import com.algorithms.graph.DisjointSet;
 import com.algorithms.graph.TopologicalSort;
@@ -158,8 +158,7 @@ public class Algorithms {
         DisjointSet.driver();
         CyclicUndirectedGraphCycleDetector.driver();
 
-        BridgeFinder.driver();
-
+        //BridgeFinder.driver();
         BinarySearchTreeValidator.driver();
 
         System.out.println("Diameter: " + BinaryTree.createNotBST().diameter());
@@ -292,6 +291,16 @@ public class Algorithms {
         System.out.println("| Connect N Ropes                                         |");
         System.out.println("+---------------------------------------------------------+");
         ConnectNRopes.driver();
+
+        System.out.println("\n+---------------------------------------------------------+");
+        System.out.println("| Move All Zeros to end                                   |");
+        System.out.println("+---------------------------------------------------------+");
+        MoveAllZerosToEnd.driver();
+
+        System.out.println("\n+---------------------------------------------------------+");
+        System.out.println("| Minimum sorted which sorts entire array                 |");
+        System.out.println("+---------------------------------------------------------+");
+        MinimumSortedWhichSortsEntireArray.driver();
     }
 
 }

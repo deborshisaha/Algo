@@ -19,13 +19,13 @@ public class CyclicUndirectedGraphCycleDetector {
 
     public boolean isCyclePresent() {
 
-        DisjointSet<Vertex<String>> disjoinSet = new DisjointSet<Vertex<String>>();
+        DisjointSet<Graph.Vertex<String>> disjoinSet = new DisjointSet<Graph.Vertex<String>>();
 
-        for (Vertex v : this.g.getVertices()) {
+        for (Graph.Vertex v : this.g.getVertices()) {
             disjoinSet.makeSet(v);
         }
 
-        for (Edge e : this.g.getEdges()) {
+        for (Graph.Edge e : this.g.getEdges()) {
             if (disjoinSet.union(e.getSource(), e.getDestination())) {
                 return true;
             }
