@@ -326,6 +326,11 @@ public class Algorithms {
         System.out.println("| Postive and Negative number                             |");
         System.out.println("+---------------------------------------------------------+");
         PositiveAndNegativeNumberAlternatively.driver();
+        
+        System.out.println("\n+---------------------------------------------------------+");
+        System.out.println("| CHunk Merge                                             |");
+        System.out.println("+---------------------------------------------------------+");
+        ChunkMerge.driver();
     }
 
 }
